@@ -31,9 +31,8 @@ const NavbarLandingPage = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
             <Brain className="w-8 h-8 text-purple-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">MindMapAI</span>
+            <span className="ml-2 text-xl font-bold text-gray-900">MindMapAI - AI Powered Guidance</span>
           </div>
-
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="#features">Features</NavLink>
