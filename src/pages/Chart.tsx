@@ -16,9 +16,10 @@ import {
 } from "lucide-react";
 import axios from "axios";
 const API_URL = "http://localhost:5000/api";
-const token = localStorage.getItem("token");
-const tokenData = decodeToken(token);
-const id = tokenData.id;
+// const token = localStorage.getItem("token");
+
+// const tokenData = decodeToken(token);
+// const id = tokenData.id;
 interface Message {
   id: string;
   content: string;
