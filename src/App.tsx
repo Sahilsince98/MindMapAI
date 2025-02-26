@@ -12,13 +12,9 @@ import { Sidebar } from './components/Sidebar';
 import { Navbar } from './components/Navbar';
 import { useAuthStore } from './store/authStore';
 import Quiz from './pages/Quiz';
-import HeroSection from './components/HeroSection';
-import Features from './components/Features';
-import About from './components/About';
-import Pricing from './components/Pricing';
-import { Contact } from 'lucide-react';
-import NavbarLandingPage from './components/NavbarLandingPage';
 import Landing from './pages/Landing';
+import { Motivation } from './pages/Motivation';
+import {Profile} from './pages/Profile';
 
 export default function App() {
   const { token } = useAuthStore();
@@ -41,6 +37,9 @@ export default function App() {
                   <Route path="/friends" element={<Friends />} />
                   <Route path="/games" element={<Games />} />
                   <Route path="/quiz" element={<Quiz/>} />
+                  <Route path="/motivation" element={<Motivation />} />
+                  <Route path="/profile" element={<Profile />} />
+                  
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </Routes>
               </div>

@@ -8,7 +8,8 @@ import {
   Users, 
   Gamepad2, 
   ChevronLeft, 
-  ChevronRight 
+  ChevronRight ,
+  Lightbulb
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -20,13 +21,15 @@ interface SidebarItem {
 const sidebarItems: SidebarItem[] = [
   { icon: BarChart, label: 'Chart', path: '/chart' },
   { icon: ClipboardCheck, label: 'Test', path: '/test' },
+  { icon: Lightbulb, label: 'Motivation', path: '/motivation' },
   { icon: Compass, label: 'Adventures', path: '/adventures' },
   { icon: Users, label: 'Friends', path: '/friends' },
   { icon: Gamepad2, label: 'Games', path: '/games' },
+  
 ];
 
 export const Sidebar = () => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,14 +43,14 @@ export const Sidebar = () => {
       }}
       className="min-h-screen bg-gradient-to-b from-purple-600 to-blue-600 text-white fixed left-0 top-16 z-40 overflow-visible shadow-xl"
     >
-      <motion.button
+      {/* <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsExpanded(!isExpanded)}
         className="absolute -right-4 top-4 bg-white text-purple-600 rounded-full p-2 shadow-lg hover:shadow-xl z-50"
       >
         {isExpanded ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
-      </motion.button>
+      </motion.button> */}
 
       <div className="flex flex-col h-full py-8">
         {sidebarItems.map((item) => {
@@ -72,7 +75,7 @@ export const Sidebar = () => {
                       exit={{ opacity: 0, x: -10 }}
                       className="ml-4 font-medium whitespace-nowrap"
                     >
-                      {item.label}
+                      {/* {item.label} */}
                     </motion.span>
                   )}
                 </AnimatePresence>
