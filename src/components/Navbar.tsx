@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, LogOut } from 'lucide-react';
+import { Shield, LogOut,User } from 'lucide-react';
 import { useAuthStore } from '../store/authStore';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,7 +12,9 @@ export const Navbar = () => {
     signOut();
     navigate('/login');
   };
-
+  const handleEditProfile = () => {
+    navigate('/profile');
+  };
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -34,7 +36,16 @@ export const Navbar = () => {
             Guardian
           </h1>
         </motion.div>
-
+        <div className="flex space-x-4">
+        <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleEditProfile}
+            className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
+          >
+            <User size={20} />
+            <span>Edit Profile</span>
+          </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -44,7 +55,11 @@ export const Navbar = () => {
           <LogOut size={20} />
           <span>Logout</span>
         </motion.button>
+        </div>
       </div>
     </motion.nav>
   );
 }
+
+
+

@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import decodeToken from "../lib/decodeToken";
+import axios from "axios";
 import {
   MessageSquare,
   Send,
   Sparkles,
-  Star,
-  Heart,
-  Smile,
-  Sun,
-  Moon,
-  Cloud,
   X,
   Notebook as Robot,
 } from "lucide-react";
-import axios from "axios";
-const API_URL = "http://localhost:5000/api";
-// const token = localStorage.getItem("token");
-
-// const tokenData = decodeToken(token);
-// const id = tokenData.id;
+interface TokenData {
+  id: string; 
+}
+import { marked } from "marked"; 
+const API_URL =import.meta.env.VITE_APP_PORT;
+const token = localStorage.getItem("token");
+const tokenData = decodeToken(token as string) as TokenData; // Cast the return type
+const id = tokenData?.id
 interface Message {
   id: string;
   content: string;
@@ -39,13 +36,34 @@ const Chart = () => {
   ]);
   const [newMessage, setNewMessage] = useState("");
   const [showChat, setShowChat] = useState(true);
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false);
+  const [aiResponse, setAiResponse] = useState<string>(""); // Store AI response to simulate typing
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const simulateTyping = (responseText: string) => {
+    if (!responseText) {
+      responseText = "";
+    }
 
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = responseText;
+
+    const elements = Array.from(tempElement.childNodes);
+    let currentElementIndex = 0;
+
+    const typingInterval = setInterval(() => {
+      if (currentElementIndex < elements.length) {
+        const currentElement = elements[currentElementIndex] as HTMLElement;
+        setAiResponse((prev) => prev + currentElement.outerHTML);
+        currentElementIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 350);
+  };
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newMessage.trim()) return;
 
-    // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       content: newMessage,
@@ -53,49 +71,58 @@ const Chart = () => {
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]); // User message
-
-    setIsLoading(true); // Set loading state to true when sending the message
-
+    setMessages((prev) => [...prev, userMessage]);
+    setIsLoading(true);
+    setAiResponse("");
     try {
-      setNewMessage(""); // Clear the input field after receiving AI response
+      setNewMessage("");
       const response = await axios.post(`${API_URL}/userChart`, {
         query: newMessage,
         user_id: id,
       });
       const aiResponseText =
         response?.data?.answer?.text || "I'm not sure, can you rephrase that?";
-
-      // Simulate AI message
+      const formattedAIResponse = marked(aiResponseText as string);
+      simulateTyping(formattedAIResponse as string);
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: aiResponseText,
+        content: formattedAIResponse,
         sender: "ai",
         timestamp: new Date(),
       };
-      setMessages((prev) => [...prev, aiMessage]); // AI message
 
-      setIsLoading(false); // Set loading state to false once the response is received
+      setMessages((prev) => [...prev, aiMessage]);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error sending message:", error);
-      setIsLoading(false); // Reset loading state on error
+      setIsLoading(false);
     }
   };
 
+  // Scroll to the bottom whenever messages change
+  useEffect(() => {
+    if (messagesContainerRef?.current) {
+      // Scroll to the bottom of the messages container
+      messagesContainerRef.current.scrollTop =
+        messagesContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Chat Section */}
+      <div className="max-w-full mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 ">
           <AnimatePresence>
             {showChat && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden h-[600px] flex flex-col relative order-2 lg:order-1 "
+                style={{
+                  zIndex: 9999, // Ensure chat box is on top of other elements
+                }}
+                className="bg-white rounded-3xl shadow-xl overflow-hidden h-[600px] flex flex-col relative order-2 lg:order-1 z-1 "
               >
-                {/* Chat Header */}
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-4 flex items-center justify-between ">
                   <div className="flex items-center space-x-3">
                     <motion.div
@@ -117,7 +144,10 @@ const Chart = () => {
                 </div>
 
                 {/* Messages Area */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                <div
+                  ref={messagesContainerRef}
+                  className="flex-1 overflow-y-auto p-4 space-y-4"
+                >
                   {messages.map((message) => (
                     <motion.div
                       key={message.id}
@@ -136,12 +166,15 @@ const Chart = () => {
                             : "bg-blue-100 text-purple-900 rounded-bl-none"
                         }`}
                       >
-                        {message.content}
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: message.content,
+                          }}
+                        />
                       </div>
                     </motion.div>
                   ))}
 
-                  {/* Show loading indicator when waiting for AI response */}
                   {isLoading && (
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -185,7 +218,6 @@ const Chart = () => {
                   )}
                 </div>
 
-                {/* Message Input */}
                 <form
                   onSubmit={handleSendMessage}
                   className="p-4 border-t bg-white"
@@ -208,82 +240,13 @@ const Chart = () => {
                     </motion.button>
                   </div>
                 </form>
-
-                {/* Floating Decorations */}
-                {[Star, Heart, Sun, Moon, Cloud].map((Icon, index) => (
-                  <motion.div
-                    key={index}
-                    className="absolute text-purple-200 pointer-events-none"
-                    style={{
-                      top: `${Math.random() * 70 + 15}%`,
-                      left: `${Math.random() * 70 + 15}%`,
-                    }}
-                    animate={{
-                      rotate: 360,
-                      scale: [1, 1.2, 1],
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: index * 0.4,
-                    }}
-                  >
-                    <Icon size={24} />
-                  </motion.div>
-                ))}
               </motion.div>
             )}
           </AnimatePresence>
-
-          {/* Progress Section */}
-          <div className="order-1 lg:order-2">
-            <div className="text-center mb-8">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="inline-block"
-              >
-                <Star size={64} className="text-purple-600" />
-              </motion.div>
-              <h1 className="text-4xl font-bold text-purple-600 mb-4">
-                Your Progress
-              </h1>
-              <p className="text-gray-600">Keep up the great work! 🌟</p>
-            </div>
-
-            <div className="space-y-6">
-              {/* Progress Cards */}
-              {["Reading", "Math", "Science"].map((subject, index) => (
-                <motion.div
-                  key={subject}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-white p-6 rounded-2xl shadow-xl"
-                >
-                  <h3 className="text-xl font-bold text-purple-600 mb-3">
-                    {subject}
-                  </h3>
-                  <div className="relative h-4 bg-purple-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(index + 1) * 25}%` }}
-                      transition={{ duration: 1, delay: index * 0.2 }}
-                      className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-blue-500"
-                    />
-                  </div>
-                  <p className="text-right mt-2 text-sm text-gray-600">
-                    {(index + 1) * 25}% Complete
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Chat Toggle Button (visible when chat is hidden) */}
+      {/* Chat Toggle Button */}
       {!showChat && (
         <motion.button
           initial={{ scale: 0 }}

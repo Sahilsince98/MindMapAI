@@ -1,13 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Sparkles, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import { Brain, Sparkles, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
-    const navigate=useNavigate()
-   const handleLoginNavigate = () => {
-    navigate("/login")
-   }
+  const navigate = useNavigate();
+  const handleLoginNavigate = () => {
+    navigate("/login");
+  };
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 overflow-hidden">
       {/* Floating particles background */}
@@ -35,26 +35,35 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 pt-20 pb-32 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <motion.div 
+          <motion.div
             className="flex-1 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-600 mb-8">
-              <Sparkles className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">AI-Powered Student Success</span>
+            <Sparkles className="w-4 h-4 mr-2" />
+              <span className="text-sm font-medium">
+                AI-Powered Student Success
+              </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               AI-Powered Guidance for Every Student's Success
             </h1>
-            
+
             <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-              Empowering students with personalized insights for academic growth, emotional well-being, 
-              and career success—all through the power of AI.
+              Unlock the full potential of personalized learning with our
+              cutting-edge AI-powered platform, designed to guide every student
+              toward success. By analyzing individual strengths, identifying
+              areas for improvement, and delivering tailored recommendations, we
+              ensure each learner receives the support they need to excel. From
+              academic planning to skill enhancement, our technology adapts to
+              every student's unique journey, fostering growth, boosting
+              confidence, and preparing them for a brighter future. With AI as
+              your mentor, success is no longer a goal—it's a guarantee.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -65,7 +74,7 @@ const HeroSection = () => {
                 Try AI Counseling for Free
                 <ArrowRight className="w-5 h-5 ml-2" />
               </motion.button>
-              
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -77,7 +86,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex-1"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -90,7 +99,7 @@ const HeroSection = () => {
                 alt="Students using AI platform"
                 className="relative rounded-3xl shadow-2xl w-full object-cover"
               />
-              
+
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -102,8 +111,12 @@ const HeroSection = () => {
                     <Brain className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-gray-900">AI-Powered</p>
-                    <p className="text-xs text-gray-500">Personalized Guidance</p>
+                    <p className="text-sm font-semibold text-gray-900">
+                      AI-Powered
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      Personalized Guidance
+                    </p>
                   </div>
                 </div>
               </motion.div>
