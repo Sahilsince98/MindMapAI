@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { AnimatedBalloons } from '../components/AnimatedBalloons';
 import { LogIn, Star, Rocket, Heart, Sun, Rainbow } from 'lucide-react';
-
 export const Login = () => {
   const navigate = useNavigate();
   const { signIn } = useAuthStore();
@@ -14,7 +13,6 @@ export const Login = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);

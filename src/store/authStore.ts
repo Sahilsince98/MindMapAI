@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
-const API_URL = "http://localhost:5000/api";
+const API_URL =import.meta.env.VITE_APP_PORT;
+
 interface User {
   name: string;
   email: string;
@@ -42,6 +43,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       const user = await axios.post(`${API_URL}/login`, emailPassword, {
         headers: { "Content-Type": "application/json" },
       });
+      console.log(user)
       if (!user) {
         throw new Error("Invalid credentials");
       }
@@ -90,6 +92,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       const response = await axios.post(`${API_URL}/register`, newUser, {
         headers: { "Content-Type": "application/json" },
       });
+      console.log(response,"response")
       set({ loading: false });
     } catch (error: any) {
       set({ error: error.message, loading: false });
