@@ -1,2 +1,2 @@
-REACT_APP_PORT=http://localhost:5000/api
+REACT_APP_PORT=https://bkd.mindmapai.xyz/api/
 

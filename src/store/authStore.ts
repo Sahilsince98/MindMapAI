@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
-const API_URL =import.meta.env.VITE_APP_PORT;
+const API_URL = import.meta.env.VITE_APP_PORT;
 
 interface User {
   name: string;
@@ -16,15 +16,8 @@ interface AuthState {
     name: string,
     age: string,
     gender: string,
-    grade: string,
-    school: string,
-    cityCountry: string,
-    preferredLanguage: string,
     email: string,
-    password: string,
-    hobbies: string,
-    interests: string,
-    futureGoals: string
+    password: string
   ) => Promise<void>;
   signOut: () => void;
 }
@@ -43,7 +36,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       const user = await axios.post(`${API_URL}/login`, emailPassword, {
         headers: { "Content-Type": "application/json" },
       });
-      console.log(user)
+    
       if (!user) {
         throw new Error("Invalid credentials");
       }
@@ -63,38 +56,26 @@ export const useAuthStore = create<AuthState>((set) => ({
     name: string,
     age: string,
     gender: string,
-    grade: string,
-    school: string,
-    cityCountry: string,
-    preferredLanguage: string,
     email: string,
-    password: string,
-    hobbies: string,
-    interests: string,
-    futureGoals: string
+    password: string
   ) => {
     set({ loading: true, error: null });
     const newUser = {
       name,
       email,
-      hobbies,
-      interests,
-      futureGoals,
+
       password,
       age,
       gender,
-      grade,
-      school,
-      cityCountry,
-      preferredLanguage,
     };
     try {
       const response = await axios.post(`${API_URL}/register`, newUser, {
         headers: { "Content-Type": "application/json" },
       });
-      console.log(response,"response")
       set({ loading: false });
+      return response
     } catch (error: any) {
+      console.log(error);
       set({ error: error.message, loading: false });
     }
   },
