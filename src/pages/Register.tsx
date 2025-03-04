@@ -11,43 +11,36 @@ export const Register = () => {
     name: "",
     age: "",
     gender: "",
-    grade: "",
-    school: "",
-    cityCountry: "",
-    preferredLanguage: "",
     email: "",
     password: "",
-    hobbies: "",
-    interests: "",
-    futureGoals: "",
   });
-  console.log(userData)
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
     try {
-      await signUp(
+      const response = await signUp(
         userData.name,
         userData.age,
         userData.gender,
-        userData.grade,
-        userData.school,
-        userData.cityCountry,
-        userData.preferredLanguage,
         userData.email,
-        userData.password,
-        userData.hobbies,
-        userData.interests,
-        userData.futureGoals
+        userData.password
       );
-      navigate("/login");
-    } catch (err: any) {
-      setError(err.message);
+      console.log("Response:", response);
+
+      // if (response.status === 201) {
+      if(response){
+        navigate("/login");}
+        else{
+          alert("User already exist");
+        }
+      // } else {
+      //   alert("User already exist");
+      // }
+    } catch (error: any) {
     } finally {
       setIsLoading(false);
     }
@@ -73,50 +66,6 @@ export const Register = () => {
           <p className="text-gray-600">Create your magical account</p>
         </div>
 
-        {/* <form onSubmit={handleRegister} className="space-y-6">
-          <div>
-            <motion.input
-              whileFocus={{ scale: 1.02 }}
-              type="text"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-full border-2 border-green-200 focus:border-green-400 focus:outline-none"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <motion.input
-              whileFocus={{ scale: 1.02 }}
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-3 rounded-full border-2 border-green-200 focus:border-green-400 focus:outline-none"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <motion.input
-              whileFocus={{ scale: 1.02 }}
-              type="password"
-              placeholder="Password"
-              className="w-full px-4 py-3 rounded-full border-2 border-green-200 focus:border-green-400 focus:outline-none"
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              required
-            />
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full bg-green-500 text-white py-3 rounded-full font-bold hover:bg-green-600 transition-colors"
-            type="submit"
-            disabled={isLoading}
-          >
-            {isLoading ? 'Creating Account...' : 'Create Account'}
-          </motion.button>
-        </form> */}
         <form onSubmit={handleRegister} className="space-y-6">
           <motion.input
             type="text"
@@ -150,52 +99,7 @@ export const Register = () => {
             <option value="Other">Other</option>
             <option value="Prefer Not to Say">Prefer Not to Say</option>
           </select>
-          <motion.input
-            type="text"
-            whileFocus={{ scale: 1.02 }}
-            placeholder="Grade/Class"
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.grade}
-            onChange={(e) =>
-              setUserData({ ...userData, grade: e.target.value })
-            }
-            required
-          />
-          <motion.input
-            type="text"
-            whileFocus={{ scale: 1.02 }}
-            placeholder="School Name"
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.school}
-            onChange={(e) =>
-              setUserData({ ...userData, school: e.target.value })
-            }
-            required
-          />
-          <motion.input
-            type="text"
-            whileFocus={{ scale: 1.02 }}
-            placeholder="City & Country"
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.cityCountry}
-            onChange={(e) =>
-              setUserData({ ...userData, cityCountry: e.target.value })
-            }
-            required
-          />
-          <select
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.preferredLanguage}
-            onChange={(e) =>
-              setUserData({ ...userData, preferredLanguage: e.target.value })
-            }
-            required
-          >
-            <option value="">Preferred Language</option>
-            <option value="English">English</option>
-            <option value="Hindi">Hindi</option>
-            <option value="Other">Other</option>
-          </select>
+
           <motion.input
             type="email"
             placeholder="Email"
@@ -217,36 +121,7 @@ export const Register = () => {
             }
             required
           />
-          <motion.input
-            type="text"
-            whileFocus={{ scale: 1.02 }}
-            placeholder="Hobbies (Optional)"
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.hobbies}
-            onChange={(e) =>
-              setUserData({ ...userData, hobbies: e.target.value })
-            }
-          />
-          <motion.input
-            type="text"
-            whileFocus={{ scale: 1.02 }}
-            placeholder="Interests (Optional)"
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.interests}
-            onChange={(e) =>
-              setUserData({ ...userData, interests: e.target.value })
-            }
-          />
-          <motion.input
-            type="text"
-            whileFocus={{ scale: 1.02 }}
-            placeholder="Future Goals (Optional)"
-            className="w-full px-4 py-3 rounded-full border-2 border-green-200"
-            value={userData.futureGoals}
-            onChange={(e) =>
-              setUserData({ ...userData, futureGoals: e.target.value })
-            }
-          />
+
           <motion.button
             className="w-full bg-green-500 text-white py-3 rounded-full font-bold"
             type="submit"

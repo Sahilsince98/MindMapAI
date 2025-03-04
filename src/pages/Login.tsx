@@ -22,7 +22,7 @@ export const Login = () => {
       await signIn(credentials.email, credentials.password);
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.message);
+      setError("Invalid credentials");
     } finally {
       setIsLoading(false);
     }
