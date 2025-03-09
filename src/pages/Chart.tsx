@@ -118,10 +118,10 @@ const Chart = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                style={{
-                  zIndex: 9999, // Ensure chat box is on top of other elements
-                }}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden h-[600px] flex flex-col relative order-2 lg:order-1 z-1 "
+                // style={{
+                //   zIndex: 9999, // Ensure chat box is on top of other elements
+                // }}
+                className="bg-white rounded-3xl shadow-xl overflow-hidden h-[600px] flex flex-col relative order-2 lg:order-1  "
               >
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-4 flex items-center justify-between ">
                   <div className="flex items-center space-x-3">

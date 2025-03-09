@@ -53,15 +53,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-              Unlock the full potential of personalized learning with our
-              cutting-edge AI-powered platform, designed to guide every student
-              toward success. By analyzing individual strengths, identifying
-              areas for improvement, and delivering tailored recommendations, we
-              ensure each learner receives the support they need to excel. From
-              academic planning to skill enhancement, our technology adapts to
-              every student's unique journey, fostering growth, boosting
-              confidence, and preparing them for a brighter future. With AI as
-              your mentor, success is no longer a goal—it's a guarantee.
+            Unlock personalized learning with our AI-powered platform! It analyzes strengths, identifies gaps, and provides tailored recommendations to help every student excel. From academic planning to skill enhancement, our adaptive technology ensures growth, confidence, and success.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -75,14 +67,6 @@ const HeroSection = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </motion.button>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-purple-600 rounded-full font-semibold flex items-center justify-center border-2 border-purple-600 hover:bg-purple-50 transition-colors w-full sm:w-auto"
-              >
-                Learn More
-                <Brain className="w-5 h-5 ml-2" />
-              </motion.button>
             </div>
           </motion.div>
 
