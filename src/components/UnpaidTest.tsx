@@ -1,3 +1,15 @@
+// import React from 'react'
+
+// const UnpaidTest = () => {
+//   return (
+//     <div>
+//          hy
+
+//     </div>
+//   )
+// }
+
+// export default UnpaidTest
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Award } from "lucide-react";
@@ -6,6 +18,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { useLocation } from "react-router-dom";
 import { marked } from "marked";
 import axios from "axios";
+import NavbarLandingPage from "./NavbarLandingPage";
 interface Question {
   id: number;
   question: string;
@@ -24,7 +37,7 @@ interface RotatingLinesProps {
   wrapperStyle?: React.CSSProperties;
   wrapperClass?: string;
 }
-const Quiz = () => {
+const UnpaidTest = () => {
   const location = useLocation();
   const allQuizzes: Record<string, Question[]> = {
     iqTest: [
@@ -429,6 +442,8 @@ const Quiz = () => {
     }
   }, [dynamicQuestions]);
   return (
+    <>
+    <NavbarLandingPage/>
     <div className="h-screen flex justify-center items-center bg-gradient-to-br from-purple-100 to-blue-100 p-4 md:p-8 ">
       <motion.div
         initial={{ opacity: 0 }}
@@ -615,7 +630,9 @@ const Quiz = () => {
         )}
       </motion.div>
     </div>
+    </>
+   
   );
 };
 
-export default Quiz;
+export default UnpaidTest;

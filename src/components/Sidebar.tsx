@@ -82,7 +82,7 @@ export const Sidebar = () => {
               </motion.div>
               
               {/* Tooltip for collapsed state */}
-              {!isExpanded && hoveredItem === item.path && (
+              {/* {!isExpanded && hoveredItem === item.path && (
                 <motion.div
                   initial={{ opacity: 0, x: 70 }}
                   animate={{ opacity: 1, x: 80 }}
@@ -90,8 +90,8 @@ export const Sidebar = () => {
                   className="absolute left-0 top-0 bg-white text-purple-600 px-4 py-2 rounded-lg shadow-lg whitespace-nowrap z-50"
                 >
                   {item.label}
-                </motion.div>
-              )}
+                </motion.div> */}
+              {/* )} */}
             </div>
           );
         })}

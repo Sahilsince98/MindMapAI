@@ -15,6 +15,9 @@ export const Navbar = () => {
   const handleEditProfile = () => {
     navigate('/profile');
   };
+  const handleNavigate=()=>{
+    navigate('/dashboard');
+  }
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -32,8 +35,8 @@ export const Navbar = () => {
           >
             <Shield size={32} className="text-white" />
           </motion.div>
-          <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-            Guardian
+          <h1 onClick={handleNavigate} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200 cursor-pointer">
+            Mind Map Ai
           </h1>
         </motion.div>
         <div className="flex space-x-4">
@@ -44,7 +47,7 @@ export const Navbar = () => {
             className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
           >
             <User size={20} />
-            <span>Edit Profile</span>
+            {/* <span>Edit Profile</span> */}
           </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}

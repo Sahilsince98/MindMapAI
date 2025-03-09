@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, Brain, Star, Trophy, Heart, Sparkles } from 'lucide-react';
+import {
+  ClipboardCheck,
+  Brain,
+  Star,
+  Trophy,
+  Heart,
+  Sparkles,
+} from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 export const Test = () => {
@@ -11,7 +18,13 @@ export const Test = () => {
     referenceBook: "",
   });
 
-  const subjects = ["Mathematics", "History", "Physics", "Chemistry", "Biology"]; // Add more subjects as needed
+  const subjects = [
+    "Mathematics",
+    "History",
+    "Physics",
+    "Chemistry",
+    "Biology",
+  ]; // Add more subjects as needed
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +67,7 @@ export const Test = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* //Quick IQ test */}
+          {/* //Quick IQ test */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white p-8 rounded-2xl shadow-xl"
@@ -95,20 +108,25 @@ export const Test = () => {
             >
               <Heart size={32} className="text-pink-600" />
             </motion.div>
-            <h3 className="text-2xl font-bold text-pink-600 text-center mb-4">Personality Test</h3>
-            <p className="text-gray-600 text-center mb-6">Discover your unique personality traits!</p>
+            <h3 className="text-2xl font-bold text-pink-600 text-center mb-4">
+              Personality Test
+            </h3>
+            <p className="text-gray-600 text-center mb-6">
+              Discover your unique personality traits!
+            </p>
             <motion.button
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }} 
+              whileTap={{ scale: 0.9 }}
               className="w-full bg-pink-500 text-white py-3 rounded-full font-bold hover:bg-pink-600"
-              onClick={() => navigate("/quiz",{ state: { quizType: "personalityTest" } })}
+              onClick={() =>
+                navigate("/quiz", { state: { quizType: "personalityTest" } })
+              }
             >
               Start Test
             </motion.button>
           </motion.div>
-              {/* Memory Test */}
-              <motion.div
-            
+          {/* Memory Test */}
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white p-8 rounded-2xl shadow-xl"
           >
@@ -119,11 +137,16 @@ export const Test = () => {
             >
               <Brain size={32} className="text-blue-600" />
             </motion.div>
-            <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">Memory Test</h3>
-            <p className="text-gray-600 text-center mb-6">Challenge your memory skills!</p>
+            <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">
+              Memory Test
+            </h3>
+            <p className="text-gray-600 text-center mb-6">
+              Challenge your memory skills!
+            </p>
             <motion.button
-                          onClick={() => navigate("/quiz",{ state: { quizType: "memoryTest" } })}
-
+              onClick={() =>
+                navigate("/quiz", { state: { quizType: "memoryTest" } })
+              }
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="w-full bg-blue-500 text-white py-3 rounded-full font-bold hover:bg-blue-600"
@@ -131,8 +154,8 @@ export const Test = () => {
               Start Test
             </motion.button>
           </motion.div>
-                {/* Creativity Test */}
-                {/* <motion.div
+          {/* Creativity Test */}
+          {/* <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white p-8 rounded-2xl shadow-xl"
           >
@@ -156,7 +179,7 @@ export const Test = () => {
               Start Test
             </motion.button>
           </motion.div> */}
-      {/* Challenge */}
+          {/* Challenge */}
           {/* <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white p-8 rounded-2xl shadow-xl"
@@ -207,8 +230,8 @@ export const Test = () => {
           </motion.div>
         ))}
       </motion.div>
-            {/* Popup */}
-            {showPopup && (
+      {/* Popup */}
+      {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-xl shadow-lg w-96">
             <h4 className="text-xl font-bold text-center mb-4">Quiz Details</h4>
@@ -217,7 +240,7 @@ export const Test = () => {
                 <label className="block text-sm font-medium text-gray-700">
                   Subject
                 </label>
-                <select
+                {/* <select
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
@@ -229,7 +252,15 @@ export const Test = () => {
                       {subject}
                     </option>
                   ))}
-                </select>
+                </select> */}
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="Enter subject"
+                  className="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -279,8 +310,6 @@ export const Test = () => {
           </div>
         </div>
       )}
-  
-
     </div>
   );
 };
