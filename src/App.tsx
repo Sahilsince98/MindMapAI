@@ -49,10 +49,11 @@ export default function App() {
         )}
         {!token && (
           <Routes>
+          
               <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/unpaidTest" element={<UnpaidTest />} />
+            <Route path="/landing-page-test" element={<UnpaidTest />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         )}

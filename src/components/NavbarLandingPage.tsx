@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Brain } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 const NavbarLandingPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +19,9 @@ const NavbarLandingPage = () => {
   const handleLoginNavigate = () => {
     navigate("/login");
   };
+  const handleLandingPageNavigate = () => {
+    navigate("/");
+  };
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -31,19 +34,26 @@ const NavbarLandingPage = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
             <Brain className="w-8 h-8 text-purple-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">
+            <span
+              onClick={handleLandingPageNavigate}
+              className="ml-2 text-xl font-bold text-gray-900  cursor-pointer"
+            >
               MindMapAI
             </span>
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-           {location.pathname == "/unpaidTest"?"":
-           <>
-            <NavLink href="#features">Features</NavLink>
-            <NavLink href="#about">About</NavLink>
-            {/* <NavLink href="#pricing">Pricing</NavLink>
+            {location.pathname == "/landing-page-test" ? (
+              ""
+            ) : (
+              <>
+                <NavLink href="#features">Features</NavLink>
+                <NavLink href="#about">About</NavLink>
+                {/* <NavLink href="#pricing">Pricing</NavLink>
             <NavLink href="#contact">Contact</NavLink> */}
-            <NavLink href="/unpaidTest" >Test</NavLink></>}
+                <Link to="/landing-page-test">Test</Link>
+              </>
+            )}
             <button
               onClick={handleLoginNavigate}
               className="px-6 py-2 bg-purple-600 text-white rounded-full font-medium hover:bg-purple-700 transition-colors"
@@ -76,11 +86,17 @@ const NavbarLandingPage = () => {
             className="md:hidden bg-white border-t"
           >
             <div className="flex flex-col py-4 space-y-4 px-4">
-              <MobileNavLink href="#features">Features</MobileNavLink>
-              <MobileNavLink href="#about">About</MobileNavLink>
-              {/* <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+              {location.pathname == "/landing-page-test" ? (
+                ""
+              ) : (
+                <>
+                  <MobileNavLink href="#features">Features</MobileNavLink>
+                  <MobileNavLink href="#about">About</MobileNavLink>
+                  {/* <MobileNavLink href="#pricing">Pricing</MobileNavLink>
               <MobileNavLink href="#contact">Contact</MobileNavLink> */}
-            
+                  <Link to="/landing-page-test">Test</Link>
+                </>
+              )}
               <button className="w-full px-6 py-3 bg-purple-600 text-white rounded-full font-medium hover:bg-purple-700 transition-colors">
                 Get Started
               </button>

@@ -17,7 +17,7 @@
 //     e.preventDefault();
 //     setIsLoading(true);
 //     setError('');
-    
+
 //     try {
 //       await signIn(credentials.email, credentials.password);
 //       navigate('/dashboard');
@@ -31,7 +31,7 @@
 //   return (
 //     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 flex items-center justify-center p-4 overflow-hidden">
 //       <AnimatedBalloons />
-      
+
 //       <motion.div
 //         initial={{ scale: 0.8, opacity: 0 }}
 //         animate={{ scale: 1, opacity: 1 }}
@@ -45,7 +45,7 @@
 //           >
 //             <LogIn size={40} />
 //           </motion.div>
-//           <motion.h1 
+//           <motion.h1
 //             className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
 //             animate={{ scale: [1, 1.1, 1] }}
 //             transition={{ duration: 2, repeat: Infinity }}
@@ -130,6 +130,7 @@ import { AnimatedBalloons } from "../components/AnimatedBalloons";
 import { LogIn } from "lucide-react";
 import { auth } from "../components/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import NavbarLandingPage from "../components/NavbarLandingPage";
 // import icon from "../../public/googleIcon .png"
 export const Login = () => {
   const navigate = useNavigate();
@@ -139,7 +140,7 @@ export const Login = () => {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [isGoogleLoading,setIsGoogleLoading]=useState(false)
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [error, setError] = useState("");
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -254,7 +255,9 @@ export const Login = () => {
           disabled={isGoogleLoading}
         >
           <img src="/googleIcon.png" alt="Google" className="w-6 h-6" />
-          {isGoogleLoading ? "Logging in with Google..." : "Sign in with Google"}
+          {isGoogleLoading
+            ? "Logging in with Google..."
+            : "Sign in with Google"}
         </motion.button>
         <motion.div whileHover={{ scale: 1.05 }} className="mt-8 text-center">
           <button
