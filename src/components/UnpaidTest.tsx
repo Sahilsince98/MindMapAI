@@ -1,638 +1,454 @@
-// import React from 'react'
 
-// const UnpaidTest = () => {
-//   return (
-//     <div>
-//          hy
+import { Award } from "lucide-react";
 
-//     </div>
-//   )
-// }
-
-// export default UnpaidTest
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Award } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { RotatingLines } from "react-loader-spinner";
-import { useLocation } from "react-router-dom";
-import { marked } from "marked";
-import axios from "axios";
 import NavbarLandingPage from "./NavbarLandingPage";
-interface Question {
-  id: number;
-  question: string;
-  options: string[];
-  correctAnswer: number;
-}
 
-interface RotatingLinesProps {
-  visible: boolean;
-  height: number;
-  width: number;
-  strokeColor?: string;
-  strokeWidth?: number;
-  animationDuration?: number;
-  ariaLabel?: string;
-  wrapperStyle?: React.CSSProperties;
-  wrapperClass?: string;
-}
+import { Brain, Lightbulb, Target, Compass, Star, ArrowRight, CheckCircle, Users, TrendingUp, Play, Zap, Users2, Eye, Building2, BadgeCheck } from 'lucide-react';
+
+
 const UnpaidTest = () => {
-  const location = useLocation();
-  const allQuizzes: Record<string, Question[]> = {
-    iqTest: [
-      {
-        id: 1,
-        question: "What comes next in the sequence? 2, 6, 12, 20, 30, ?",
-        options: ["38", "40", "42", "44"],
-        correctAnswer: 3,
-      },
-      {
-        id: 2,
-        question: "Which shape completes the pattern?🟦 ➝ 🔷 ➝ 🟨 ➝ 🔶 ➝ ?",
-        options: ["🟦", "🟥", "🔺", "🟥"],
-        correctAnswer: 2,
-      },
-      {
-        id: 3,
-        question: "Find the odd one out:",
-        options: ["Cunning", "Clever", "Intelligent", "Foolish"],
-        correctAnswer: 4,
-      },
-      {
-        id: 4,
-        question:
-          "If a car travels 60 km in 90 minutes, what is its speed in km/h?",
-        options: ["30 km/h", "40 km/h", "45 km/h", "60 km/h"],
-        correctAnswer: 3,
-      },
-      {
-        id: 5,
-        question:
-          "Which number replaces the question mark? 1, 1, 2, 3, 5, 8, ?",
-        options: ["10", "11", "13", "15"],
-        correctAnswer: 3,
-      },
-      {
-        id: 6,
-        question: "Which word is most similar to Benevolent?",
-        options: ["Generous", "Harmful", "Thoughtful", "Dangerous"],
-        correctAnswer: 1,
-      },
-      {
-        id: 7,
-        question: "Which shape is the mirror image of: 🔻📐 ?",
-        options: ["🔼📐", "📐🔻", "🔺📐", "📐🔺"],
-        correctAnswer: 2,
-      },
-      {
-        id: 8,
-        question:
-          "If John is taller than Alice, and Alice is taller than Sam, who is the shortest?",
-        options: ["John", "Alice", "Sam", "Cannot be determined"],
-        correctAnswer: 3,
-      },
-      {
-        id: 9,
-        question:
-          "If all Bloops are Razzles and all Razzles are Lumps, then all Bloops are definitely:",
-        options: ["Razzles", "Lumps", "Both A & B", "None of the above"],
-        correctAnswer: 3,
-      },
-      {
-        id: 10,
-        question:
-          "You see a list: Apple, Banana, Carrot, Dragonfruit, Eggplant. What was the third item?",
-        options: ["Apple", "Carrot", "Dragonfruit", "Eggplant"],
-        correctAnswer: 2,
-      },
-    ],
-    personalityTest: [
-      {
-        id: 1,
-        question:
-          "When you experience strong emotions, you can easily identify what you're feeling.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 2,
-        question: "You remain calm and collected even in stressful situations.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 3,
-        question:
-          "You can easily understand how others are feeling, even without them saying it.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 4,
-        question:
-          "You find it easy to express your emotions in a healthy and constructive way.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 5,
-        question:
-          "When someone gives you negative feedback, you handle it without becoming defensive.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 6,
-        question:
-          "You are good at resolving conflicts and maintaining positive relationships.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 7,
-        question:
-          "You have effective strategies to manage stress and avoid emotional burnout.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 8,
-        question:
-          "You think before reacting emotionally in difficult situations.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 9,
-        question:
-          "You find it easy to start conversations and connect with people.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-      {
-        id: 10,
-        question:
-          "You focus more on solutions rather than dwelling on problems.",
-        options: [
-          "Strongly Agree",
-          "Agree",
-          "Neutral",
-          "Disagree",
-          "Strongly Disagree",
-        ],
-        correctAnswer: 2, // "Agree"
-      },
-    ],
-    memoryTest: [
-      {
-        id: 1,
-        question:
-          "If a doctor gives you three pills and tells you to take one every 30 minutes, how long will they last?",
-        options: ["30 minutes", "60 minutes", "90 minutes", "120 minutes"],
-        correctAnswer: 2, // 60 minutes
-      },
-      {
-        id: 2,
-        question: "A rooster lays an egg on a rooftop. Which way does it roll?",
-        options: ["Left", "Right", "Down", "Roosters don’t lay eggs"],
-        correctAnswer: 4, // Roosters don’t lay eggs
-      },
-      {
-        id: 3,
-        question:
-          "You are in a race and you pass the person in 2nd place. What place are you in now?",
-        options: ["1st", "2nd", "3rd", "4th"],
-        correctAnswer: 2, // 2nd
-      },
-      {
-        id: 4,
-        question:
-          "A store sells a shirt for $20. You buy it with a $50 bill. How much change should you get?",
-        options: ["$20", "$30", "$40", "$50"],
-        correctAnswer: 2, // $30
-      },
-      {
-        id: 5,
-        question: "Which is heavier: a ton of bricks or a ton of feathers?",
-        options: [
-          "Bricks",
-          "Feathers",
-          "They weigh the same",
-          "Depends on the materials",
-        ],
-        correctAnswer: 3, // They weigh the same
-      },
-      {
-        id: 6,
-        question:
-          "If a train is moving 100 mph north and the wind is blowing 100 mph south, which way does the smoke go?",
-        options: ["North", "South", "Up", "Trains don’t have smoke anymore"],
-        correctAnswer: 4, // Trains don’t have smoke anymore
-      },
-      {
-        id: 7,
-        question: "How many months have 28 days?",
-        options: ["1", "6", "12", "9"],
-        correctAnswer: 3, // 12
-      },
-      {
-        id: 8,
-        question: "If you divide 30 by half and add 10, what do you get?",
-        options: ["15", "25", "70", "50"],
-        correctAnswer: 3, // 70
-      },
-      {
-        id: 9,
-        question:
-          "A farmer has 5 sheep, and all but 3 run away. How many are left?",
-        options: ["0", "3", "5", "2"],
-        correctAnswer: 2, // 3
-      },
-      {
-        id: 10,
-        question:
-          "You’re in a dark room with a match, a candle, and a lamp. What do you light first?",
-        options: ["The candle", "The lamp", "The match", "None"],
-        correctAnswer: 3, // The match
-      },
-    ],
-  };
-  // Extract quiz type from location.state
-  const quizType = location.state?.quizType;
-  const questionType = location.state?.details;
-  // Get the selected quiz questions
-  const questions: Question[] = allQuizzes[quizType] || [];
-  const navigate = useNavigate();
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-  const [result, setResult] = useState("");
-  const [startTime, setStartTime] = useState<number | null>(null);
-  const [timeSpent, setTimeSpent] = useState<number>(0);
-  const [timerActive, setTimerActive] = useState(true); // Track if timer is active
-  const [isLoading, setIsLoading] = useState(false);
-  const [performanceReport, setPerformanceReport] = useState<string>("");
-  const [dynamicQuestions, setDynamicQuestions] = useState<Question[]>([]);
-  console.log(dynamicQuestions, "dynamicQuestions-");
-  const [answers, setAnswers] = useState<number[]>([]);
-  const API_URL = import.meta.env.VITE_APP_PORT;
-  useEffect(() => {
-    if (startTime === null) {
-      setStartTime(Date.now());
-    }
-    const timer = setInterval(() => {
-      if (startTime !== null && timerActive) {
-        setTimeSpent(Math.floor((Date.now() - startTime) / 1000));
-      }
-    }, 1000);
 
-    return () => clearInterval(timer);
-  }, [startTime, timerActive]);
 
-  const handleAnswer = (optionIndex: number) => {
-    const newAnswers = [...answers];
-    newAnswers[currentQuestion] = optionIndex;
-    setAnswers(newAnswers);
-  };
 
-  const nextQuestion = () => {
-    if (currentQuestion < dynamicQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else if (answers.every((answer) => answer !== -1)) {
-      calculateResults();
-    }
-  };
-  // create Performace report
-  const calculateResults = async () => {
-    // Stop the timer when the quiz is completed
-    setTimerActive(false);
-    // Correct answers count
-    const correctAnswers = answers.filter(
-      (answer, index) => answer === dynamicQuestions[index]?.correctAnswer - 1
-    ).length;
-
-    const totalTime = timeSpent; // Time taken in seconds
-    // Prepare data to send
-    const resultsData = {
-      query: answers.map((answer, index) => ({
-        question: dynamicQuestions[index]?.question,
-        answer: dynamicQuestions[index]?.options[answer],
-        correctAnswer:
-          dynamicQuestions[index]?.options[
-            dynamicQuestions[index]?.correctAnswer - 1
-          ],
-        timeTaken: timeSpent, // Adjust as needed
-      })),
-      correctAnswers: correctAnswers,
-      totalTime: totalTime,
-    };
-    setResult(
-      `You got ${correctAnswers} out of ${dynamicQuestions.length} correct.`
-    );
-    setShowResults(true);
-    try {
-      setIsLoading(true);
-      // Send the data to the backend
-      const response = await fetch(`${API_URL}/quizResponse`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(resultsData),
-      });
-      if (response.ok) {
-        const data = await response.json();
-
-        const performanceReport = marked(data.report);
-        setPerformanceReport(performanceReport as string);
-        setIsLoading(false);
-      } else {
-        console.error("Error submitting results");
-      }
-    } catch (error) {
-      setIsLoading(false);
-      console.error("Error sending results:", error);
-    }
-  };
-  //create Questions
-  const createQuestion = async () => {
-    setIsLoading(true);
-    try {
-      const query = questionType;
-      const data = {
-        subject: query.subject,
-        topic: query.topic,
-        referenceBook: query.referenceBook,
-      };
-      const response = await axios.post(`${API_URL}/createQuestion`, data);
-      console.log(response, "response");
-      setDynamicQuestions(response?.data?.report?.questions || []);
-
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
-  };
-  useEffect(() => {
-    if (location.state?.details) {
-      createQuestion();
-    } else {
-      console.log("Details are missing in location.state");
-    }
-  }, []);
-  useEffect(() => {
-    if (dynamicQuestions.length > 0) {
-      // Initialize answers array when dynamicQuestions are set
-      setAnswers(new Array(dynamicQuestions?.length).fill(-1));
-    }
-  }, [dynamicQuestions]);
+ 
   return (
     <>
     <NavbarLandingPage/>
-    <div className="h-screen flex justify-center items-center bg-gradient-to-br from-purple-100 to-blue-100 p-4 md:p-8 ">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="max-w-5xl w-full mx-auto flex justify-center items-center z-50"
-      >
-        {!showResults ? (
-          <div className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-4xl">
-            {/* Progress bar */}
-            {isLoading ? (
-              ""
-            ) : (
-              <div className="mb-8">
-                <div className="h-2 bg-gray-200 rounded-full">
-                  <motion.div
-                    className="h-full bg-purple-500 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{
-                      width: `${
-                        ((currentQuestion + 1) / dynamicQuestions.length) * 100
-                      }%`,
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                <p className="text-center mt-2 text-gray-600">
-                  Question {currentQuestion + 1} of {dynamicQuestions.length}
-                </p>
-              </div>
-            )}
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentQuestion}
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -100, opacity: 0 }}
-                className="mb-8"
-              >
-                {isLoading ? (
-                  ""
-                ) : (
-                  <h2 className="text-2xl font-bold text-purple-600 mb-6">
-                    {dynamicQuestions[currentQuestion]?.question}
-                  </h2>
-                )}
-
-                <div className="space-y-4">
-                  {isLoading ? (
-                    <div className="flex justify-center items-center ">
-                      <RotatingLines
-                        visible={true}
-                        height="96"
-                        width="96"
-                        strokeColor="#0000FF" // Pure blue
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        ariaLabel="rotating-lines-loading"
-                        wrapperStyle={{
-                          color: "#0000FF", // Ensure color is explicitly applied
-                        }}
-                        wrapperClass=""
-                      />
-                    </div>
-                  ) : (
-                    dynamicQuestions[currentQuestion]?.options?.map(
-                      (option, index) => (
-                        <motion.button
-                          key={index}
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          onClick={() => handleAnswer(index)}
-                          className={`w-full p-4 rounded-xl text-left transition-all ${
-                            answers[currentQuestion] === index
-                              ? "bg-purple-500 text-white"
-                              : "bg-purple-50 text-purple-900 hover:bg-purple-100"
-                          }`}
-                        >
-                          {option}
-                        </motion.button>
-                      )
-                    )
-                  )}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {isLoading ? (
-              ""
-            ) : (
-              <div className="flex justify-end mt-8">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={nextQuestion}
-                  disabled={answers[currentQuestion] === -1}
-                  className="bg-purple-500 text-white px-6 py-3 rounded-full flex items-center"
-                >
-                  {currentQuestion === dynamicQuestions.length - 1 &&
-                  answers[currentQuestion] !== -1
-                    ? "Finish"
-                    : "Next"}
-                  <ArrowRight className="ml-2" size={20} />
-                </motion.button>
-              </div>
-            )}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      {/* Hero Section */}
+      <header className="container mx-auto px-4 pt-20 pb-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] opacity-10 bg-cover bg-center"></div>
+        <div className="max-w-4xl mx-auto text-center relative">
+          <div className="mb-8 animate-float">
+            <Brain className="w-16 h-16 mx-auto text-indigo-600" />
           </div>
-        ) : (
-          <>
-            {/* Quiz Complete Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-3xl shadow-xl p-7 text-center w-full sm:w-3/4 mx-auto m-2"
-            >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 2 }}
-                className="inline-block mb-6"
-              >
-                <Award size={64} className="text-purple-500" />
-              </motion.div>
-              <h2 className="text-3xl font-bold text-purple-600 mb-4">
-                Quiz Complete!
-              </h2>
-              <p className="text-xl text-gray-600 mb-6">
-                Based on your answers:
-              </p>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                className="text-2xl font-bold text-purple-500 mb-8"
-              >
-                {result}
-              </motion.div>
-              <p className="text-xl text-gray-600 mb-6">
-                Time taken: {timeSpent} seconds
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => navigate("/test")}
-                className="bg-purple-500 text-white px-8 py-3 rounded-full"
-              >
-                Back to Tests
-              </motion.button>
-            </motion.div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text fade-in">
+            Unlock Your Mind's Full Potential
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 fade-in-delay-1">
+            Discover your unique thinking patterns and transform your decision-making abilities with our AI-powered mind mapping assessment.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 fade-in-delay-2">
+            <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2">
+              Take the Test Now <ArrowRight className="w-5 h-5" />
+            </button>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Users className="w-5 h-5" />
+              <span>Join 50,000+ users</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-            {/* Performance Report Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-r from-purple-500 m-3 via-pink-500 to-red-500 text-white rounded-3xl shadow-2xl p-7 mt-5 w-full sm:w-3/4  "
-            >
-              <h2 className="text-3xl font-bold mb-6">Performance Report</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-1 gap-8">
-                {isLoading ? (
-                  <div className="flex justify-center items-center ">
-                    <RotatingLines
-                      visible={true}
-                      height="96"
-                      width="96"
-                      strokeColor="#FFFFFF"
-                      strokeWidth="5"
-                      animationDuration="0.75"
-                      ariaLabel="rotating-lines-loading"
-                      wrapperStyle={{
-                        color: "#FFFFFF", // Ensure color is explicitly applied
-                      }}
-                      wrapperClass=""
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="bg-white text-gray-800 rounded-2xl shadow-md p-6 overflow-y-auto max-h-96 max-w-10xl"
-                    dangerouslySetInnerHTML={{
-                      __html: performanceReport,
-                    }}
+      {/* Features Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+            Top Features for <span className="gradient-text">Individuals</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl card-shadow hover-scale">
+                <div className="mb-6">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-48 object-cover rounded-xl"
                   />
-                )}
+                </div>
+                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                  <div className="text-indigo-600">{feature.icon}</div>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 mb-6">{feature.description}</p>
+                <a href="#" className="text-indigo-600 font-semibold flex items-center gap-2 hover:text-indigo-700 transition-colors">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-            </motion.div>
-          </>
-        )}
-      </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+              See How It Works
+            </h2>
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl hover:shadow-indigo-500/20 transition-shadow duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                alt="How it works"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                <button className="w-20 h-20 rounded-full bg-white bg-opacity-90 flex items-center justify-center hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 text-indigo-600 ml-1" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="bg-white py-12 border-y border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto text-center">
+            {stats.map((stat, index) => (
+              <div key={index} className="hover-scale">
+                <div className="text-3xl font-bold text-indigo-600 mb-2">{stat.value}</div>
+                <div className="text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before & After Section */}
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+            Your Journey to <span className="gradient-text">Mental Clarity</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="bg-white p-8 rounded-2xl card-shadow hover-scale">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+                  <Target className="w-6 h-6 text-red-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Before the Test</h3>
+              </div>
+              <div className="mb-6 rounded-xl overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  alt="Person looking confused"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <ul className="space-y-6">
+                {beforePoints.map((point, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="text-red-500 mt-1">{point.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">{point.title}</h4>
+                      <p className="text-gray-600">{point.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white p-8 rounded-2xl card-shadow hover-scale">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                  <Star className="w-6 h-6 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">After the Test</h3>
+              </div>
+              <div className="mb-6 rounded-xl overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  alt="People collaborating successfully"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <ul className="space-y-6">
+                {afterPoints.map((point, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="text-green-500 mt-1">{point.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">{point.title}</h4>
+                      <p className="text-gray-600">{point.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+            Transform Your <span className="gradient-text">Understanding</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl card-shadow hover-scale">
+                <div className="mb-6 rounded-xl overflow-hidden">
+                  <img 
+                    src={benefit.image} 
+                    alt={benefit.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                  <div className="text-indigo-600">{benefit.icon}</div>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+            Start Your <span className="gradient-text">Strengths Journey</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {pricingPlans.map((plan, index) => (
+              <div key={index} className={`bg-white p-8 rounded-2xl ${plan.featured ? 'ring-2 ring-indigo-600 shadow-xl' : 'card-shadow'} hover-scale`}>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.title}</h3>
+                <div className="flex items-baseline mb-8">
+                  <span className="text-4xl font-bold text-gray-900">${plan.price}</span>
+                  <span className="text-gray-500 ml-2">{plan.period}</span>
+                </div>
+                <ul className="space-y-4 mb-8">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-indigo-600 mt-1 flex-shrink-0" />
+                      <span className="text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className={`w-full py-3 px-6 rounded-full font-semibold ${plan.featured ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'} transition-colors`}>
+                  Get Started
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+            What Our <span className="gradient-text">Users Say</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl card-shadow hover-scale">
+                <div className="flex items-center mb-6">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-14 h-14 rounded-full object-cover ring-4 ring-indigo-50"
+                  />
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] opacity-10 bg-cover bg-center"></div>
+        <div className="container mx-auto px-4 text-center relative">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">
+              Ready to Unlock Your Mind's Potential?
+            </h2>
+            <p className="text-xl opacity-90 mb-12">
+              Join thousands of others who have transformed their understanding through our AI-powered test.
+            </p>
+            <button className="bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center mx-auto gap-2">
+              Start Your Journey Now <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
+ 
+ 
     </>
    
   );
 };
+const stats = [
+  { value: "50,000+", label: "Active Users" },
+  { value: "97%", label: "Satisfaction Rate" },
+  { value: "15min", label: "Average Test Time" },
+  { value: "89%", label: "Accuracy Rate" }
+];
 
+const beforePoints = [
+  {
+    icon: <Compass className="w-5 h-5" />,
+    title: "Unclear Direction",
+    description: "Struggling to understand your natural thinking patterns and decision-making process."
+  },
+  {
+    icon: <Target className="w-5 h-5" />,
+    title: "Decision Paralysis",
+    description: "Finding it difficult to make confident choices in personal and professional life."
+  },
+  {
+    icon: <Brain className="w-5 h-5" />,
+    title: "Cognitive Confusion",
+    description: "Unsure about your mental strengths and how to leverage them effectively."
+  }
+];
+
+const afterPoints = [
+  {
+    icon: <Lightbulb className="w-5 h-5" />,
+    title: "Crystal Clear Insight",
+    description: "Deep understanding of your cognitive patterns and how to optimize them."
+  },
+  {
+    icon: <CheckCircle className="w-5 h-5" />,
+    title: "Confident Decisions",
+    description: "Make choices aligned with your natural thinking style and strengths."
+  },
+  {
+    icon: <TrendingUp className="w-5 h-5" />,
+    title: "Enhanced Performance",
+    description: "Leverage your cognitive strengths for better personal and professional results."
+  }
+];
+
+const features = [
+  {
+    icon: <Zap className="w-6 h-6" />,
+    title: "Understand Yourself",
+    description: "Reveal in-depth insights into your top 5 strengths, as unique as 1 in 1.86 million. Understand what makes you stand out and how to reach your full potential.",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <Users2 className="w-6 h-6" />,
+    title: "Work Better with Others",
+    description: "Analyze strengths fit between you and colleagues, get actionable insights on effective communication and build stronger relationships.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <Eye className="w-6 h-6" />,
+    title: "See Different Perspectives",
+    description: "Get external perspectives on your strengths through peer reviews. Improve communication and build lasting professional relationships.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <Award className="w-6 h-6" />,
+    title: "Build Personal Brand",
+    description: "Add your strengths certificate to LinkedIn and communicate effectively. Position yourself to do what you love every day.",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <Building2 className="w-6 h-6" />,
+    title: "Career Development",
+    description: "Get personalized career insights based on your strengths. Find roles that align with your natural abilities and talents.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <BadgeCheck className="w-6 h-6" />,
+    title: "Continuous Growth",
+    description: "Track your development with ongoing feedback and analytics. See how your strengths evolve over time.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+const benefits = [
+  {
+    icon: <Brain className="w-6 h-6" />,
+    title: "Enhanced Self-Awareness",
+    description: "Gain deep insights into your cognitive patterns and thinking preferences, understanding how your mind naturally works.",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <Lightbulb className="w-6 h-6" />,
+    title: "Better Decision Making",
+    description: "Learn to leverage your natural thinking style for improved choices, reducing stress and uncertainty in decision-making.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: <Compass className="w-6 h-6" />,
+    title: "Clear Direction",
+    description: "Receive personalized recommendations for personal and professional growth based on your unique cognitive profile.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+const pricingPlans = [
+  {
+    title: "Full Strengths Report",
+    price: "29",
+    period: "/report",
+    features: [
+      "List of your top 5 strengths",
+      "Actionable development insights",
+      "Watch out areas",
+      "Best partners",
+      "Career applications",
+      "Collect one-time 360 feedback",
+      "Invite up to 10 friends",
+      "Create up to 5 groups"
+    ]
+  },
+  {
+    title: "Full Report + Coaching Call",
+    price: "69",
+    period: "",
+    featured: true,
+    features: [
+      "Everything from the Full Strengths Report",
+      "30-min debriefing call with certified coach",
+      "Personalized session based on results",
+      "Clear actions identified",
+      "Development plan creation",
+      "Follow-up resources",
+      "Priority support"
+    ]
+  },
+  {
+    title: "Full Platform Access",
+    price: "96",
+    period: "/year",
+    features: [
+      "Your Full Strengths Report",
+      "Collect ongoing 360 feedback",
+      "Unlimited friend invites",
+      "Weekly insights",
+      "Unlimited analytics",
+      "Unlimited groups",
+      "Priority support",
+      "Regular progress tracking"
+    ]
+  }
+];
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    role: "Marketing Director",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80",
+    quote: "This test gave me incredible insights into how I process information. It's transformed how I approach challenges at work and helped me build stronger team dynamics."
+  },
+  {
+    name: "Michael Chen",
+    role: "Software Engineer",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80",
+    quote: "The personalized recommendations were spot-on. I've noticed a significant improvement in my problem-solving abilities and how I approach complex technical challenges."
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Student",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80",
+    quote: "As a student, understanding my thinking patterns has helped me develop better study strategies. My grades have improved, and I feel more confident in my academic journey."
+  }
+];
 export default UnpaidTest;
