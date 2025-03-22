@@ -16,6 +16,8 @@ import Landing from './pages/Landing';
 import { Motivation } from './pages/Motivation';
 import {Profile} from './pages/Profile';
 import UnpaidTest from './components/UnpaidTest';
+import SoftSkillsTest from './pages/SoftSkillsTest';
+import Questions from './pages/Questions';
 
 export default function App() {
   const { token } = useAuthStore();
@@ -40,7 +42,7 @@ export default function App() {
                   <Route path="/quiz" element={<Quiz/>} />
                   <Route path="/motivation" element={<Motivation />} />
                   <Route path="/profile" element={<Profile />} />
-                 
+                  
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </Routes>
               </div>
@@ -54,7 +56,11 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/landing-page-test" element={<UnpaidTest />} />
+            <Route path="/soft-skills-test" element={<SoftSkillsTest/>} />
+            <Route path="/questions" element={<Questions/>} />
+             
             <Route path="*" element={<Navigate to="/" replace />} />
+
           </Routes>
         )}
            
