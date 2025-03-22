@@ -1,18 +1,13 @@
 
-
-
-import NavbarLandingPage from "./NavbarLandingPage";
-
+import NavbarLandingPage from '../components/NavbarLandingPage'
 import { Brain, Lightbulb, Target, Compass, Star, ArrowRight, CheckCircle, Users, TrendingUp, Play, Zap, Users2, Eye, Award, Building2, BadgeCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from "react";
-
-
-const UnpaidTest = () => {
-
+import { useNavigate } from 'react-router-dom';
+const SoftSkillsTest = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  
+   const navigate=useNavigate()
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -26,7 +21,9 @@ const UnpaidTest = () => {
     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     setTimeout(() => setIsAnimating(false), 500);
   };
-
+const handleNavigate=()=>{
+    navigate("/questions")
+}
   useEffect(() => {
     let intervalId;
     if (!isPaused) {
@@ -34,13 +31,9 @@ const UnpaidTest = () => {
     }
     return () => clearInterval(intervalId);
   }, [isPaused]);
-
-
- 
   return (
     <>
     <NavbarLandingPage/>
-
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
       {/* Hero Section */}
       <header className="container mx-auto px-4 pt-20 pb-32 relative overflow-hidden">
@@ -57,7 +50,7 @@ const UnpaidTest = () => {
 
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 fade-in-delay-2">
-            <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2">
+            <button onClick={handleNavigate}  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2">
               Take the Test Now <ArrowRight className="w-5 h-5" />
             </button>
             <div className="flex items-center gap-2 text-gray-600">
@@ -563,4 +556,4 @@ const testimonials = [
     quote: "We've incorporated this test into our hiring process. It's helped us build more balanced teams and improve workplace harmony."
   }
 ];
-export default UnpaidTest;
+export default SoftSkillsTest;
