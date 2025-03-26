@@ -15,7 +15,6 @@ import Quiz from './pages/Quiz';
 import Landing from './pages/Landing';
 import { Motivation } from './pages/Motivation';
 import {Profile} from './pages/Profile';
-import UnpaidTest from './components/UnpaidTest';
 import SoftSkillsTest from './pages/SoftSkillsTest';
 import Questions from './pages/Questions';
 
@@ -55,10 +54,8 @@ export default function App() {
               <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/landing-page-test" element={<UnpaidTest />} />
             <Route path="/soft-skills-test" element={<SoftSkillsTest/>} />
             <Route path="/questions" element={<Questions/>} />
-             
             <Route path="*" element={<Navigate to="/" replace />} />
 
           </Routes>

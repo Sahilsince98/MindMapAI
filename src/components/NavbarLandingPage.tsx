@@ -183,7 +183,7 @@ const NavbarLandingPage = () => {
 
           {/* Desktop Menu - Centered */}
           <div className="hidden md:flex flex-1 justify-center space-x-8">
-            {location.pathname !== "/landing-page-test" && (
+            {location.pathname !== "/landing-page-test"&& location.pathname !== "/questions" && (
               <>
                 <NavLink href="#features">Features</NavLink>
                 <NavLink href="#about">About</NavLink>
@@ -258,7 +258,7 @@ const NavbarLandingPage = () => {
             className="md:hidden bg-white border-t"
           >
             <div className="flex flex-col py-4 space-y-4 px-4">
-              {location.pathname !== "/landing-page-test" && (
+              {location.pathname !== "/landing-page-test"&& location.pathname !== "/questions" && (
                 <>
                   <MobileNavLink href="#features">Features</MobileNavLink>
                   <MobileNavLink href="#about">About</MobileNavLink>
