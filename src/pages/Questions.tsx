@@ -8,7 +8,7 @@ import { marked } from "marked";
 import axios from "axios";
 import NavbarLandingPage from "../components/NavbarLandingPage";
 import softSkillsQuestions from "../data/softSkills.json";
-
+import {Report} from "../pages/Report"
 interface Question {
   id: number;
   question: string;
@@ -141,6 +141,7 @@ const Questions = () => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log(data)
         setPerformanceReport(marked(data.report));
       } else {
         console.error("Error submitting results");
@@ -153,15 +154,15 @@ const Questions = () => {
   };
   return (
     <>
-      <NavbarLandingPage />
-      <div className="h-screen flex justify-center items-center bg-gradient-to-br from-purple-100 to-blue-100 p-4 md:p-8">
+  
+      <div className=" min-h-[100vh]  flex justify-center items-center bg-gradient-to-br from-purple-100 to-blue-100 px-4 py-6 sm:p-6 md:p-8">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="max-w-5xl w-full mx-auto flex justify-center items-center z-50"
+          className="max-w-8xl w-full mx-auto flex justify-center items-center  "
         >
           {!showResults ? (
-            <div className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-4xl">
+            <div className="bg-white rounded-3xl  shadow-xl p-8 w-full max-w-4xl">
               <div className="mb-8">
                 <h2 className="text-xl font-semibold text-gray-700 mb-4">
                   {dynamicQuestions[currentSection]?.section}
@@ -257,7 +258,7 @@ const Questions = () => {
           ) : (
             <>
               {/* Quiz Complete Section */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-white rounded-3xl shadow-xl p-7 text-center w-full sm:w-3/4 mx-auto m-2"
@@ -293,17 +294,17 @@ const Questions = () => {
                 >
                   Back to Tests
                 </motion.button>
-              </motion.div>
+              </motion.div> */}
 
               {/* Performance Report Section */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-gradient-to-r from-purple-500 m-3 via-pink-500 to-red-500 text-white rounded-3xl shadow-2xl p-7 mt-5 w-full sm:w-3/4  "
               >
                 <h2 className="text-3xl font-bold mb-6">Performance Report</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-1 gap-8">
-                  {isLoading ? (
+                <div className="grid grid-cols-1 sm:grid-cols-1 gap-8"> */}
+                  {/* {isLoading ? (
                     <div className="flex justify-center items-center ">
                       <RotatingLines
                         visible={true}
@@ -326,9 +327,14 @@ const Questions = () => {
                         __html: performanceReport,
                       }}
                     />
-                  )}
-                </div>
-              </motion.div>
+                   
+                  )} */}
+                <div className="mx-auto max-w-10xl">
+                <Report data={performanceReport} />
+                  </div>
+                    
+                {/* </div>
+              </motion.div> */}
             </>
           )}
           
