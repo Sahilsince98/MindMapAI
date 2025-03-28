@@ -35,7 +35,6 @@ const Questions = () => {
   const [performanceReport, setPerformanceReport] = useState<string>("");
   const [dynamicQuestions, setDynamicQuestions] = useState<Section[]>([]);
   const [answers, setAnswers] = useState<number[]>([]);
-
   const API_URL = import.meta.env.VITE_APP_PORT;
 
   useEffect(() => {
@@ -141,8 +140,8 @@ const Questions = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data)
-        setPerformanceReport(marked(data.report));
+        
+        setPerformanceReport(data.report);
       } else {
         console.error("Error submitting results");
       }
