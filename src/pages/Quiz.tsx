@@ -12,18 +12,6 @@ interface Question {
   options: string[];
   correctAnswer: number;
 }
-
-interface RotatingLinesProps {
-  visible: boolean;
-  height: number;
-  width: number;
-  strokeColor?: string;
-  strokeWidth?: number;
-  animationDuration?: number;
-  ariaLabel?: string;
-  wrapperStyle?: React.CSSProperties;
-  wrapperClass?: string;
-}
 const Quiz = () => {
   const location = useLocation();
   const allQuizzes: Record<string, Question[]> = {
@@ -406,7 +394,6 @@ const Quiz = () => {
         referenceBook: query.referenceBook,
       };
       const response = await axios.post(`${API_URL}/createQuestion`, data);
-      console.log(response, "response");
       setDynamicQuestions(response?.data?.report?.questions || []);
 
       setIsLoading(false);

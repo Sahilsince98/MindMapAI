@@ -29,9 +29,6 @@ export const Register = () => {
         userData.email,
         userData.password
       );
-      console.log("Response:", response);
-
-      // if (response.status === 201) {
       if(response){
         navigate("/login");}
         else{
