@@ -1,6 +1,5 @@
 "use client"
-
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import {
     Award,
@@ -13,6 +12,7 @@ import {
     Heart,
     Lightbulb,
     Linkedin,
+    Loader2,
     MessageSquare,
     Mic,
     PuzzleIcon as PuzzlePiece,
@@ -27,9 +27,12 @@ import { Progress } from "../components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import { Badge } from "../components/ui/badge"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "../components/ui/chart"
-import NavbarLandingPage from "../components/NavbarLandingPage"
-
-export const Report = ({ data }) => {
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import Certificate from "./Certificate"
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+export const Report = ({ data, timeSpent }) => {
     const [testSummary, setTestSummary] = useState({});
     const [categoryBreakdown, setCategoryBreakdown] = useState({});
     const [userStrengths, setUserStrengths] = useState({});
@@ -42,32 +45,33 @@ export const Report = ({ data }) => {
     const [problemProgress, setProblemProgress] = useState(0)
     const [teamworkProgress, setTeamworkProgress] = useState(0)
     const [timeProgress, setTimeProgress] = useState(0)
+    const [date, setDate] = useState()
+    const [isDownloading, setIsDownloading] = useState(false);
+    const certificateRef = useRef(null);
+    const [name, setName] = useState<string>("");
+    const [showModal, setShowModal] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => setScore(87), 500)
-        const timer1 = setTimeout(() => setCommunicationProgress(92), 600)
-        const timer2 = setTimeout(() => setEmotionalProgress(85), 800)
-        const timer3 = setTimeout(() => setProblemProgress(78), 1000)
-        const timer4 = setTimeout(() => setTeamworkProgress(90), 1200)
-        const timer5 = setTimeout(() => setTimeProgress(70), 1400)
-
-        return () => {
-            clearTimeout(timer)
-            clearTimeout(timer1)
-            clearTimeout(timer2)
-            clearTimeout(timer3)
-            clearTimeout(timer4)
-            clearTimeout(timer5)
+    const handleSubmit = () => {
+        if (name.trim()) {
+            setShowModal(false);
         }
-    }, [])
-
+    };
+    //formatTime
+    const formatTime = (seconds: number): string => {
+        if (seconds < 60) {
+            return `${seconds} sec`; // If less than 60 sec, show in seconds
+        } else {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes} min ${remainingSeconds} sec`;
+        }
+    }
     const getPerformanceLevel = (score) => {
         if (score < 60) return { label: "Needs Improvement", color: "#ec4899" }
         if (score < 75) return { label: "Good", color: "#a855f7" }
         if (score < 90) return { label: "Excellent", color: "#4f46e5" }
         return { label: "Expert", color: "#2563eb" }
     }
-
     const skillsData = [
         {
             name: "Communication",
@@ -117,9 +121,31 @@ export const Report = ({ data }) => {
         { subject: "Teamwork", A: 90, B: 78, fullMark: 100 },
         { subject: "Time Management", A: 70, B: 68, fullMark: 100 },
     ]
+    //downloadPDF
+    const downloadPDF = async () => {
+        setIsDownloading(true); // Start loader
+        const element = certificateRef.current;
+        if (!element) return;
+
+        const canvas = await html2canvas(element, {
+            scale: 3,
+            useCORS: true,
+        });
+
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF("p", "mm", "a4");
+
+        const imgWidth = 210;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        pdf.addImage(imgData, "PNG", 0, 10, imgWidth, imgHeight);
+
+        pdf.save("Certificate(MindMap AI).pdf");
+        setIsDownloading(false); // Stop loader after download
+    };
+    //function lock
     useEffect(() => {
         if (data) {
-            console.log(data)
             setTestSummary(data["Test Summary"] ?? {});
             setCategoryBreakdown(data["Category-wise Breakdown"] ?? {});
             setUserStrengths(data["User  Strengths"] ?? {});
@@ -128,10 +154,53 @@ export const Report = ({ data }) => {
             setEngagementInsights(data["Engagement-Based Insights"] ?? {});
         }
     }, [data]);
-    console.log(testSummary["Percentage Score"])
+    useEffect(() => {
+        const currentDate = new Date();
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        const formattedDate = currentDate.toLocaleDateString("en-US", options);
+        setDate(formattedDate);
+    }, []);
+    useEffect(() => {
+        const timer = setTimeout(() => setScore(87), 500)
+        const timer1 = setTimeout(() => setCommunicationProgress(92), 600)
+        const timer2 = setTimeout(() => setEmotionalProgress(85), 800)
+        const timer3 = setTimeout(() => setProblemProgress(78), 1000)
+        const timer4 = setTimeout(() => setTeamworkProgress(90), 1200)
+        const timer5 = setTimeout(() => setTimeProgress(70), 1400)
+
+        return () => {
+            clearTimeout(timer)
+            clearTimeout(timer1)
+            clearTimeout(timer2)
+            clearTimeout(timer3)
+            clearTimeout(timer4)
+            clearTimeout(timer5)
+        }
+    }, [])
     return (
         <>
-            <div className="min-h-screen bg-gradient-to-b from-[#f9fafb] to-[#eef2ff] p-4 md:p-8 ">
+            {showModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+                        <h2 className="text-xl font-bold mb-4">Enter Your Name</h2>
+                        <input
+                            type="text"
+                            className="w-full p-2 border border-gray-300 rounded mb-4"
+                            placeholder="Your Name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <button
+                            className="w-full bg-gradient-to-r from-[#3b82f6] to-[#9333ea] text-white p-2 rounded"
+                            onClick={handleSubmit}
+                        >
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            )}
+            <div className={`min-h-screen bg-gradient-to-b from-[#f9fafb] to-[#eef2ff] p-4 md:p-8 transition ${showModal ? "blur-md" : ""
+                }`}>
                 <div className="mx-auto max-w-10xl">
                     {/* Header Section */}
                     <motion.div
@@ -154,13 +223,13 @@ export const Report = ({ data }) => {
                                     <Users className="h-6 w-6 text-[#3b82f6]" />
                                 </div>
                                 <div>
-                                    <h3 className="font-medium">Alex Johnson</h3>
+                                    <h3 className="font-medium">{name}</h3>
                                     <div className="flex items-center text-sm text-gray-500">
                                         <Calendar className="h-4 w-4 mr-1" />
-                                        <span>March 28, 2025</span>
+                                        <span>{date}</span>
                                         <span className="mx-2">•</span>
                                         <Clock className="h-4 w-4 mr-1" />
-                                        <span>45 minutes</span>
+                                        <span>{formatTime(timeSpent)}</span>
                                     </div>
                                 </div>
                             </div>
@@ -178,8 +247,8 @@ export const Report = ({ data }) => {
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#dcfce7] rounded-full -ml-20 -mb-20 opacity-50" />
 
                             <CardHeader className="relative z-10">
-                                <CardTitle className="text-2xl">Overall Test Performance</CardTitle>
-                                <CardDescription>How you performed across all soft skill categories</CardDescription>
+                                <CardTitle className="text-2xl"> {data ? "Overall Test Performance" : <Skeleton width={200} />}</CardTitle>
+                                <CardDescription> {data ? "How you performed across all soft skill categories" : <Skeleton width={250} />}</CardDescription>
                             </CardHeader>
 
 
@@ -187,40 +256,50 @@ export const Report = ({ data }) => {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     <div className="flex flex-col items-center justify-center">
                                         <div className="relative h-48 w-48">
-                                            <svg className="h-full w-full" viewBox="0 0 100 100">
-                                                <circle
-                                                    className="text-[#e5e7eb]"
-                                                    strokeWidth="8"
-                                                    stroke="currentColor"
-                                                    fill="transparent"
-                                                    r="40"
-                                                    cx="50"
-                                                    cy="50"
-                                                />
-                                                <circle
-                                                    className="text-[#3b82f6]"
-                                                    strokeWidth="8"
-                                                    strokeLinecap="round"
-                                                    stroke="currentColor"
-                                                    fill="transparent"
-                                                    r="40"
-                                                    cx="50"
-                                                    cy="50"
-                                                    strokeDasharray={`${(2 * Math.PI * 40 *testSummary["Percentage Score"]) / 100} ${2 * Math.PI * 40}`}
-                                                    strokeDashoffset="0"
-                                                />
-                                            </svg>
+                                            {data ? (
+                                                <svg className="h-full w-full" viewBox="0 0 100 100">
+                                                    <circle
+                                                        className="text-[#e5e7eb]"
+                                                        strokeWidth="8"
+                                                        stroke="currentColor"
+                                                        fill="transparent"
+                                                        r="40"
+                                                        cx="50"
+                                                        cy="50"
+                                                    />
+                                                    <circle
+                                                        className="text-[#3b82f6]"
+                                                        strokeWidth="8"
+                                                        strokeLinecap="round"
+                                                        stroke="currentColor"
+                                                        fill="transparent"
+                                                        r="40"
+                                                        cx="50"
+                                                        cy="50"
+                                                        strokeDasharray={`${(2 * Math.PI * 40 * testSummary["Percentage Score"]) / 100} ${2 * Math.PI * 40}`}
+                                                        strokeDashoffset="0"
+                                                    />
+                                                </svg>
+                                            ) : (
+                                                <Skeleton circle height={192} width={192} />
+                                            )}
                                             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                                <span className="text-5xl font-bold">{testSummary["Percentage Score"]}</span>
-                                                <span className="text-xl text-gray-500">/100</span>
+                                                <span className="text-5xl font-bold">                                {testSummary ? testSummary["Percentage Score"] : <Skeleton width={50} />}
+                                                </span>
+                                                {data ? <span className="text-xl text-gray-500">/100</span> : ""}
                                             </div>
                                         </div>
-                                        <Badge
-                                            className="mt-4 px-4 py-1 text-white"
-                                            style={{ backgroundColor: getPerformanceLevel(testSummary["Percentage Score"]).color }}
-                                        >
-                                            {testSummary["User’s Performance Level"]}
-                                        </Badge>
+                                        <br />
+                                        {data ? (
+                                            <Badge
+                                                className="mt-4 px-4 py-1 text-white"
+                                                style={{ backgroundColor: getPerformanceLevel(testSummary["Percentage Score"]).color }}
+                                            >
+                                                {testSummary["User’s Performance Level"]}
+                                            </Badge>
+                                        ) : (
+                                            <Skeleton width={100} height={30} />
+                                        )}
                                     </div>
 
                                     <div className="flex flex-col justify-center">
@@ -249,14 +328,14 @@ export const Report = ({ data }) => {
                                             <div>
                                                 <div className="flex justify-between mb-1 text-sm">
                                                     <span>Your Time</span>
-                                                    <span>45 minutes</span>
+                                                    <span>{formatTime(timeSpent)}</span>
                                                 </div>
-                                                <Progress value={75} className="h-2" />
+                                                <Progress value={timeSpent} className="h-2" />
                                             </div>
                                             <div>
                                                 <div className="flex justify-between mb-1 text-sm">
                                                     <span>Average Time</span>
-                                                    <span>60 minutes</span>
+                                                    <span>{formatTime(timeSpent)}</span>
                                                 </div>
                                                 <Progress value={100} className="h-2 bg-[#dbeafe]" />
                                             </div>
@@ -537,7 +616,7 @@ export const Report = ({ data }) => {
                             </Card>
                         </div>
                     </motion.div>
-
+                    <Certificate ref={certificateRef} name={name} />
                     {/* Call to Action */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -547,9 +626,13 @@ export const Report = ({ data }) => {
                         <Card className="border-none shadow-lg bg-gradient-to-r from-[#bfdbfe] to-[#f3e8ff]">
                             <CardContent className="pt-6">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <Button className="bg-[#2563eb] hover:bg-[#3b82f6] text-white">
-                                        <Download className="mr-2 h-4 w-4" />
-                                        Download Report (PDF)
+                                    <Button onClick={downloadPDF}  disabled={isDownloading}  className="bg-[#2563eb] hover:bg-[#3b82f6] text-white">
+                                        {isDownloading ? (
+                                            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> // Loader icon
+                                        ) : (
+                                            <Download className="mr-2 h-4 w-4" /> // Download icon
+                                        )}
+                                        {isDownloading ? "Downloading..." : "Download Certificate (PDF)"}
                                     </Button>
                                     <Button className="bg-[#4f46e5] hover:bg-[#9333ea] text-white">
                                         <Linkedin className="mr-2 h-4 w-4" />
