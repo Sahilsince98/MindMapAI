@@ -1,0 +1,1216 @@
+
+
+
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "Emotional Intelligence",
+      "question": "You receive sudden negative feedback on a project you worked hard on. What do you do first?",
+      "options": [
+        "Defend your work and explain why the criticism is unfair.",
+        "Take a moment to absorb it and reflect on what might be true.",
+        "Complain to a colleague about how unappreciated you feel.",
+        "Ignore it completely and move on to the next task."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 2,
+      "category": "Communication",
+      "question": "A team member frequently misunderstands your instructions. What’s the most effective first step?",
+      "options": [
+        "Speak slower and louder next time.",
+        "Switch to written communication to avoid confusion.",
+        "Ask them how they prefer to receive instructions.",
+        "Avoid assigning tasks to them in the future."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 3,
+      "category": "Self-Management",
+      "question": "You’ve missed two deadlines this month due to poor planning. What is the most responsible course of action?",
+      "options": [
+        "Apologize and take a break to avoid burnout.",
+        "Ask for lighter tasks going forward.",
+        "Reflect on time management habits and restructure your planning.",
+        "Blame external factors that caused delays."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 4,
+      "category": "Empathy",
+      "question": "A coworker is quiet and withdrawn during meetings. What should you do?",
+      "options": [
+        "Ignore it, it’s their personality.",
+        "Ask them directly in front of others if they’re okay.",
+        "Check in privately and offer space to talk if they wish.",
+        "Mention their behavior to HR."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 5,
+      "category": "Teamwork",
+      "question": "You strongly disagree with your team’s decision, but majority supports it. What’s the best way forward?",
+      "options": [
+        "Accept the decision and work toward the team's goal.",
+        "Keep raising your point until they change their minds.",
+        "Ask for a private meeting with the leader to override the team.",
+        "Detach from the task to avoid frustration."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 6,
+      "category": "Conflict Resolution",
+      "question": "Two teammates are in constant disagreement. What’s your best role as a mediator?",
+      "options": [
+        "Take the side of the one who’s usually right.",
+        "Help them find common ground and focus on shared goals.",
+        "Let them argue it out — it's not your issue.",
+        "Escalate it immediately to the manager."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 7,
+      "category": "Adaptability",
+      "question": "A major policy change disrupts your workflow. How do you react?",
+      "options": [
+        "Complain and try to go back to the old way.",
+        "Find creative ways to adjust and continue.",
+        "Wait for others to adapt before you do.",
+        "Do only what's necessary to comply, but don’t embrace it."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 8,
+      "category": "Leadership",
+      "question": "As a team lead, your members are underperforming. What should be your priority?",
+      "options": [
+        "Push them harder to meet targets.",
+        "Review and adjust your leadership approach.",
+        "Replace team members with more skilled ones.",
+        "Focus on your own work and let them catch up."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 9,
+      "category": "Time Management",
+      "question": "You're juggling five tasks and the deadline is tomorrow. What’s your best strategy?",
+      "options": [
+        "Start with the easiest tasks to gain momentum.",
+        "Focus only on the highest priority task first.",
+        "Do all tasks simultaneously to save time.",
+        "Ask someone else to take over some of them."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 10,
+      "category": "Integrity",
+      "question": "You see a teammate taking credit for your idea in a meeting. What do you do?",
+      "options": [
+        "Publicly correct them on the spot.",
+        "Wait and discuss it privately after the meeting.",
+        "Let it go — your manager knows it was your idea.",
+        "Tell HR or escalate it without confronting them."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 11,
+      "category": "Problem Solving",
+      "question": "You’re leading a project and suddenly lose access to a key tool. What’s your best response?",
+      "options": [
+        "Pause all work until the tool is restored.",
+        "Quickly find a temporary alternative and inform the team.",
+        "Ask your manager to solve the issue for you.",
+        "Continue without the tool and fix problems later."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 12,
+      "category": "Decision Making",
+      "question": "You need to make a quick decision with limited information. What do you do?",
+      "options": [
+        "Wait until more data is available, even if it causes delays.",
+        "Use your instincts and make a call based on past experience.",
+        "Ask others and go with the majority opinion.",
+        "Make a random decision to keep moving."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 13,
+      "category": "Listening Skills",
+      "question": "During a one-on-one, the other person is talking but you disagree silently. What should you do?",
+      "options": [
+        "Interrupt and share your opinion.",
+        "Nod and pretend to agree.",
+        "Listen fully, then respond thoughtfully.",
+        "Avoid eye contact to reduce conflict."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 14,
+      "category": "Adaptability",
+      "question": "You are moved to a different department without warning. What's the healthiest response?",
+      "options": [
+        "Complain to HR about the lack of notice.",
+        "Use it as a chance to learn something new.",
+        "Work poorly to show your dissatisfaction.",
+        "Refuse the change unless you're promoted."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 15,
+      "category": "Conflict Management",
+      "question": "You're in a heated discussion and feel disrespected. What’s the best action?",
+      "options": [
+        "Match their tone and defend your point.",
+        "Calmly ask to pause and resume when emotions settle.",
+        "Walk away and never address it again.",
+        "Raise your voice to be heard."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 16,
+      "category": "Responsibility",
+      "question": "You were supposed to finish a task but didn’t. Your boss hasn’t noticed. What do you do?",
+      "options": [
+        "Wait and see if anyone brings it up.",
+        "Admit it immediately and give a new timeline.",
+        "Blame a teammate if asked about it.",
+        "Say nothing and quietly finish it now."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 17,
+      "category": "Initiative",
+      "question": "There’s a visible issue in your department that no one’s addressing. What’s your move?",
+      "options": [
+        "Raise it at the next meeting and propose a fix.",
+        "Wait for a manager to take the lead.",
+        "Mention it casually in conversations.",
+        "Ignore it — not your responsibility."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 18,
+      "category": "Collaboration",
+      "question": "Your colleague’s working style is very different from yours. How do you collaborate?",
+      "options": [
+        "Force them to adjust to your methods.",
+        "Learn about their style and find a middle ground.",
+        "Avoid working with them as much as possible.",
+        "Let them lead, even if you disagree."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 19,
+      "category": "Work Ethic",
+      "question": "A client asks for extra work that’s outside your scope. What’s the most professional response?",
+      "options": [
+        "Do it without question to please them.",
+        "Firmly decline and cite your contract.",
+        "Politely offer alternatives or extra terms.",
+        "Ignore the request altogether."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 20,
+      "category": "Stress Management",
+      "question": "You’re feeling overwhelmed by deadlines and expectations. What’s the healthiest action?",
+      "options": [
+        "Push through without breaks to finish faster.",
+        "Ask for help or renegotiate deadlines.",
+        "Ignore tasks and hope stress passes.",
+        "Complain loudly so others know you’re overworked."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 21,
+      "category": "Self-Awareness",
+      "question": "You often feel anxious before presentations. What is your most helpful response?",
+      "options": [
+        "Avoid public speaking opportunities altogether.",
+        "Acknowledge the anxiety and prepare more intentionally.",
+        "Ask someone else to present for you.",
+        "Try to ignore your feelings and wing it."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 22,
+      "category": "Assertiveness",
+      "question": "Your friend keeps interrupting your study time. What’s a respectful way to handle it?",
+      "options": [
+        "Say nothing and keep tolerating it.",
+        "Tell them bluntly that they're being selfish.",
+        "Set boundaries calmly and ask for focused time.",
+        "Complain to someone else about it."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 23,
+      "category": "Communication",
+      "question": "In a group discussion, how do you ensure your voice is heard?",
+      "options": [
+        "Speak louder than others to dominate.",
+        "Interrupt politely to add your point quickly.",
+        "Wait for the right moment and express clearly.",
+        "Avoid speaking unless asked directly."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 24,
+      "category": "Growth Mindset",
+      "question": "You failed an interview. What thought reflects a healthy response?",
+      "options": [
+        "I’ll never be good enough.",
+        "I need to prepare differently and improve.",
+        "The interviewer was biased.",
+        "I’m not meant for this career."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 25,
+      "category": "Empathy",
+      "question": "A classmate tells you they're struggling with depression. What do you do?",
+      "options": [
+        "Tell them to cheer up, it’s just a phase.",
+        "Listen without judgment and ask how you can support.",
+        "Change the topic to lighten the mood.",
+        "Avoid talking to them so you’re not affected emotionally."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 26,
+      "category": "Decision-Making",
+      "question": "You’re offered two internships—one high-paying, one aligned with your passion. What’s your approach?",
+      "options": [
+        "Pick the high-paying one to secure income.",
+        "Choose the one aligned with your long-term goals.",
+        "Ask others and go with what most people recommend.",
+        "Flip a coin to decide quickly."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 27,
+      "category": "Critical Thinking",
+      "question": "You read a headline that triggers strong emotion. What’s a mindful next step?",
+      "options": [
+        "Share it immediately to raise awareness.",
+        "Fact-check it from reliable sources before reacting.",
+        "Ignore it completely to stay stress-free.",
+        "Assume it’s true and form an opinion right away."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 28,
+      "category": "Accountability",
+      "question": "You missed an important meeting because you forgot. What’s the responsible response?",
+      "options": [
+        "Make an excuse to protect your image.",
+        "Admit it, apologize, and reschedule if possible.",
+        "Blame your calendar or device.",
+        "Stay quiet and hope it’s not noticed."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 29,
+      "category": "Leadership",
+      "question": "As a leader, how do you handle underperforming team members?",
+      "options": [
+        "Criticize them publicly to set an example.",
+        "Give specific feedback and offer support for growth.",
+        "Replace them immediately.",
+        "Avoid giving them responsibilities."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 30,
+      "category": "Stress Tolerance",
+      "question": "You’re overwhelmed during exam week. What’s the healthiest coping mechanism?",
+      "options": [
+        "Ignore responsibilities until you feel better.",
+        "Use planning and breaks to manage pressure.",
+        "Blame the system for stressing you out.",
+        "Vent to others constantly without trying to fix it."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 31,
+      "category": "Self-Awareness",
+      "question": "You tend to dominate conversations unintentionally. What’s the most self-aware action you can take?",
+      "options": [
+        "Talk less, even if you have something valuable to say.",
+        "Ask for feedback and monitor your speaking time.",
+        "Continue speaking as you always do — you're just confident.",
+        "Wait to be invited to speak next time."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 32,
+      "category": "Teamwork",
+      "question": "A teammate is not pulling their weight. What’s the most effective response?",
+      "options": [
+        "Do their part quietly to avoid conflict.",
+        "Openly confront them during the next meeting.",
+        "Talk to them privately and understand the reason.",
+        "Report them to the supervisor without discussion."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 33,
+      "category": "Communication",
+      "question": "You're giving a presentation and notice people are disengaged. What do you do?",
+      "options": [
+        "Speed up to finish quickly.",
+        "Stop and ask a question to re-engage them.",
+        "Ignore the audience and finish your points.",
+        "Apologize for wasting their time."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 34,
+      "category": "Emotional Regulation",
+      "question": "You feel angry during a team discussion. What’s a mature way to manage it?",
+      "options": [
+        "Leave the discussion without explanation.",
+        "Express your anger directly so others understand you.",
+        "Take a few breaths and speak once you’re calmer.",
+        "Suppress your feelings and stay silent."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 35,
+      "category": "Listening Skills",
+      "question": "Someone is venting about a personal issue. What’s the most supportive action?",
+      "options": [
+        "Offer advice based on what worked for you.",
+        "Interrupt politely to save their time.",
+        "Just listen and validate their emotions.",
+        "Tell them others have bigger problems."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 36,
+      "category": "Decision Making",
+      "question": "You’re offered a leadership role in a project you’re unsure about. What’s the wisest approach?",
+      "options": [
+        "Say yes immediately to prove your ambition.",
+        "Decline it to avoid risk or failure.",
+        "Assess your capabilities, seek advice, then decide.",
+        "Delay the decision until someone else is chosen."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 37,
+      "category": "Workplace Etiquette",
+      "question": "You’re late to a group meeting for the second time this week. What’s the professional move?",
+      "options": [
+        "Join quietly without saying anything.",
+        "Apologize briefly and take responsibility.",
+        "Make a joke to lighten the mood.",
+        "Explain your personal problems in detail."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 38,
+      "category": "Conflict Resolution",
+      "question": "A teammate criticizes your approach in front of others. What’s the most emotionally intelligent response?",
+      "options": [
+        "Defend yourself publicly, they started it.",
+        "Ignore them and prove them wrong silently.",
+        "Ask to discuss it privately and clarify your intent.",
+        "Hold a grudge and stop helping them."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 39,
+      "category": "Motivation",
+      "question": "You’ve lost interest in your current course or job. What’s a proactive move?",
+      "options": [
+        "Push through and wait for change to happen.",
+        "Do the bare minimum while you explore other options.",
+        "Reflect on your interests and seek new learning paths.",
+        "Quit immediately to reduce stress."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 40,
+      "category": "Time Management",
+      "question": "You’ve been procrastinating on a major assignment. What’s the most effective first step?",
+      "options": [
+        "Make a detailed schedule and start with a small task.",
+        "Wait until you feel motivated again.",
+        "Do another small task first to warm up.",
+        "Tell yourself you work best under pressure anyway."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 41,
+      "category": "Empathy",
+      "question": "A junior teammate made a public mistake and looks embarrassed. What’s the most emotionally intelligent action?",
+      "options": [
+        "Publicly point out how to fix it so everyone learns.",
+        "Privately reassure them and offer support.",
+        "Ignore it — they need to learn the hard way.",
+        "Talk to others about how they messed up."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 42,
+      "category": "Feedback Skills",
+      "question": "You need to give negative feedback to a sensitive colleague. What approach is best?",
+      "options": [
+        "Say it bluntly so they take it seriously.",
+        "Use a compliment sandwich to make it easier.",
+        "Give vague hints and hope they improve.",
+        "Delay it — it’s better not to hurt feelings."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 43,
+      "category": "Self-Regulation",
+      "question": "You feel like reacting angrily to a rude comment in a professional setting. What’s the most self-regulated move?",
+      "options": [
+        "Respond calmly and revisit later if needed.",
+        "Reply with sarcasm to make your point.",
+        "Ignore it and act coldly toward them afterward.",
+        "React strongly to stop them from repeating it."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 44,
+      "category": "Accountability",
+      "question": "You forgot to submit a key file that’s delaying a team process. What’s the most responsible action?",
+      "options": [
+        "Blame the system or deadline confusion.",
+        "Quietly upload the file and say nothing.",
+        "Inform the team, apologize, and send it ASAP.",
+        "Wait for someone to notice before acting."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 45,
+      "category": "Initiative",
+      "question": "There’s no clear leader in a group task and things are falling apart. What should you do?",
+      "options": [
+        "Wait for someone to take charge.",
+        "Take initiative and suggest a basic plan.",
+        "Do your part only and ignore the rest.",
+        "Blame the organizer for not assigning leadership."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 46,
+      "category": "Conflict Management",
+      "question": "Two colleagues are arguing during a meeting. What’s your best role?",
+      "options": [
+        "Interrupt and silence both parties.",
+        "Take sides based on your preference.",
+        "Help steer the conversation back to shared goals.",
+        "Let them resolve it — it’s not your problem."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 47,
+      "category": "Resilience",
+      "question": "You’ve been rejected in three job interviews in a row. What’s the strongest mindset to adopt?",
+      "options": [
+        "This proves I'm not good enough.",
+        "Everyone struggles; I’ll learn and try again.",
+        "Maybe I should stop applying altogether.",
+        "I’ll get lucky eventually if I keep applying blindly."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 48,
+      "category": "Social Intelligence",
+      "question": "At a networking event, someone keeps dominating the conversation. What’s a smart response?",
+      "options": [
+        "Interrupt and talk over them.",
+        "Wait for a pause and shift the topic to involve others.",
+        "Stop talking and let them take the spotlight.",
+        "Tell them directly they’re annoying others."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 49,
+      "category": "Time Management",
+      "question": "You have one hour and multiple tasks of equal priority. What’s the smartest approach?",
+      "options": [
+        "Start all tasks together to make some progress.",
+        "Pick one and finish it completely before moving on.",
+        "Do whichever feels easiest first.",
+        "Ask someone else to do half the work."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 50,
+      "category": "Adaptability",
+      "question": "Your company changes its internal systems overnight. What’s a high adaptability move?",
+      "options": [
+        "Complain and ask to go back to the old system.",
+        "Explore the new system and ask for help where needed.",
+        "Wait for others to learn first, then follow.",
+        "Keep using the old method until forced to change."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 51,
+      "category": "Self-Motivation",
+      "question": "You’ve set a goal to read more, but you haven’t started yet. What’s the most constructive next step?",
+      "options": [
+        "Feel guilty and criticize yourself for lacking discipline.",
+        "Break the goal into smaller parts and start with 5 minutes a day.",
+        "Wait for motivation to strike before starting.",
+        "Abandon the goal for now and revisit it later."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 52,
+      "category": "Communication",
+      "question": "Someone misinterprets your email and gets offended. How do you respond?",
+      "options": [
+        "Ignore it — it’s their fault for misunderstanding.",
+        "Send a follow-up to clarify your tone and intent.",
+        "Call them out publicly for overreacting.",
+        "Send a sarcastic reply to lighten the mood."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 53,
+      "category": "Responsibility",
+      "question": "You notice a small error in your team’s final report before submission. What should you do?",
+      "options": [
+        "Let it go — it’s not your part.",
+        "Fix it quietly if you can and inform the team.",
+        "Wait for the team lead to spot it.",
+        "Mention it after the report is submitted."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 54,
+      "category": "Growth Mindset",
+      "question": "Your teammate is better at a certain skill than you. What’s the most productive mindset?",
+      "options": [
+        "Feel insecure and try to avoid them.",
+        "Ask them for tips and learn from their approach.",
+        "Criticize their work to feel better.",
+        "Try to outshine them by competing secretly."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 55,
+      "category": "Teamwork",
+      "question": "Your idea wasn’t selected in a team discussion. What’s the best response?",
+      "options": [
+        "Withdraw from the project silently.",
+        "Support the chosen idea and contribute fully.",
+        "Keep pushing your idea anyway.",
+        "Blame the team for not recognizing your input."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 56,
+      "category": "Adaptability",
+      "question": "Your job now requires skills you haven't mastered yet. What do you do?",
+      "options": [
+        "Ask for reassignment.",
+        "Take initiative to learn those skills quickly.",
+        "Complain that the expectations have changed.",
+        "Hope no one notices your struggle."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 57,
+      "category": "Work Ethic",
+      "question": "Your manager is on leave. The team is relaxing. What do you do?",
+      "options": [
+        "Follow the team vibe and take it easy.",
+        "Keep working at your usual pace regardless.",
+        "Take a break but make sure to catch up later.",
+        "Wait for instructions before doing anything."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 58,
+      "category": "Empathy",
+      "question": "Your colleague is acting distant and irritable. What’s the best way to respond?",
+      "options": [
+        "Avoid them until they behave better.",
+        "Ask if everything is okay and offer support.",
+        "Tell them their mood is affecting the team.",
+        "Take it personally and become cold."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 59,
+      "category": "Decision-Making",
+      "question": "You’re offered a task you’ve never done before, but it excites you. What’s the smartest move?",
+      "options": [
+        "Decline — it’s too risky to try now.",
+        "Accept it and commit to learning fast.",
+        "Let someone else take it while you observe.",
+        "Ask to be reassigned only after trying."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 60,
+      "category": "Confidence",
+      "question": "You’ve been given a chance to speak in front of 200 people. You’re nervous but prepared. What’s the best mindset?",
+      "options": [
+        "Back out and suggest someone else.",
+        "Use the nerves as fuel and go for it.",
+        "Memorize everything to avoid mistakes.",
+        "Pretend you’re confident even if you're not ready."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 61,
+      "category": "Stress Management",
+      "question": "You’re juggling several urgent tasks and feel overwhelmed. What’s the smartest way to respond?",
+      "options": [
+        "Panic and rush to finish something quickly.",
+        "Take a moment, prioritize, and tackle one task at a time.",
+        "Complain to others to get help.",
+        "Ignore the feeling and just keep working without pause."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 62,
+      "category": "Integrity",
+      "question": "You accidentally discover a colleague is lying about their attendance. What do you do?",
+      "options": [
+        "Report it anonymously to HR or the teacher.",
+        "Ignore it — it’s not your business.",
+        "Confront them publicly for dishonesty.",
+        "Tell a few others to see what they think first."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 63,
+      "category": "Listening Skills",
+      "question": "During a conversation, someone is explaining a personal issue, but you feel bored. What’s the most respectful action?",
+      "options": [
+        "Nod occasionally while thinking about something else.",
+        "Interrupt politely and change the topic.",
+        "Stay fully present and listen actively.",
+        "Give quick advice to end the conversation faster."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 64,
+      "category": "Conflict Resolution",
+      "question": "You and a peer strongly disagree on a group project direction. What’s the best approach?",
+      "options": [
+        "Insist on your point because you believe it's right.",
+        "Listen to their view, find common ground, and compromise.",
+        "Go along with their idea to avoid tension.",
+        "Let someone else decide so you don't have to argue."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 65,
+      "category": "Growth Mindset",
+      "question": "You’re not good at something others pick up easily. What’s the most constructive belief?",
+      "options": [
+        "I’m not smart enough for this.",
+        "With consistent effort, I can improve too.",
+        "I’ll just focus on what I’m already good at.",
+        "People like me don’t succeed in this field."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 66,
+      "category": "Initiative",
+      "question": "You see a way to improve your department’s workflow. What should you do?",
+      "options": [
+        "Keep the idea to yourself — you're not the manager.",
+        "Try it out quietly and take credit if it works.",
+        "Share it with your team or manager constructively.",
+        "Post it online to see if others agree first."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 67,
+      "category": "Patience",
+      "question": "A classmate is asking too many basic questions during a group project. What’s the best reaction?",
+      "options": [
+        "Show frustration so they stop.",
+        "Answer quickly and tell them to Google it.",
+        "Help them calmly or redirect them to the right resources.",
+        "Ignore them and focus on your part."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 68,
+      "category": "Self-Discipline",
+      "question": "You’ve planned to study tonight, but friends invite you out. What shows strong self-discipline?",
+      "options": [
+        "Go out — it’s okay to skip one night.",
+        "Try to do both, even if it reduces sleep.",
+        "Stick to your plan and reschedule social time.",
+        "Say yes now and make up for it next week."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 69,
+      "category": "Confidence",
+      "question": "You’re asked to lead a session but feel underqualified. What’s a confident mindset?",
+      "options": [
+        "Say no so you don't mess up.",
+        "Prepare well and give it your best.",
+        "Accept, but rely on others for everything.",
+        "Pass it on to someone more experienced."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 70,
+      "category": "Responsibility",
+      "question": "Your part of a group task was submitted late, affecting everyone. What’s the most responsible response?",
+      "options": [
+        "Blame miscommunication within the group.",
+        "Acknowledge your delay and make up for it.",
+        "Stay quiet and hope no one notices.",
+        "Shift blame to a technical issue."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 71,
+      "category": "Leadership",
+      "question": "You’re leading a team where one member is highly skilled but arrogant. How should you lead them?",
+      "options": [
+        "Ignore their behavior — they deliver results.",
+        "Publicly call them out to control their attitude.",
+        "Leverage their strengths while setting clear boundaries.",
+        "Let them lead since they think they know best."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 72,
+      "category": "Open-Mindedness",
+      "question": "Someone offers feedback that goes against your usual way of thinking. What’s the best first step?",
+      "options": [
+        "Defend your view immediately.",
+        "Ask questions to understand their reasoning.",
+        "Ignore it — you know what works for you.",
+        "Tell them it’s not helpful right now."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 73,
+      "category": "Emotional Intelligence",
+      "question": "You sense a friend is upset but hasn't said anything. What’s an emotionally intelligent response?",
+      "options": [
+        "Wait until they talk about it.",
+        "Gently ask if something’s wrong and offer support.",
+        "Assume it’s not your concern.",
+        "Cheer them up with jokes to avoid the topic."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 74,
+      "category": "Assertiveness",
+      "question": "You’re assigned extra work beyond your responsibilities. What’s a healthy assertive action?",
+      "options": [
+        "Accept it silently to be seen as helpful.",
+        "Firmly explain your workload and request prioritization.",
+        "Complain to coworkers about unfair treatment.",
+        "Refuse rudely to teach them a lesson."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 75,
+      "category": "Adaptability",
+      "question": "Your job now involves using an unfamiliar software. What’s the most adaptable mindset?",
+      "options": [
+        "Learn as you go and ask for help when needed.",
+        "Complain about the change to your team.",
+        "Delay using it until absolutely required.",
+        "Do only the parts you understand."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 76,
+      "category": "Time Sensitivity",
+      "question": "You realize you're going to miss a deadline. What’s the best course of action?",
+      "options": [
+        "Submit it late without explanation.",
+        "Inform your manager early and request an extension.",
+        "Stay silent and work overtime in panic mode.",
+        "Blame external factors for the delay afterward."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 77,
+      "category": "Team Spirit",
+      "question": "Your team succeeds, but your individual effort was key. What should you do?",
+      "options": [
+        "Take full credit publicly.",
+        "Celebrate the team win and share credit.",
+        "Wait for others to acknowledge your role.",
+        "Privately tell the manager about your work."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 78,
+      "category": "Ethics",
+      "question": "A close friend asks you to mark fake attendance for them. What’s the ethical choice?",
+      "options": [
+        "Do it to maintain the friendship.",
+        "Say no and explain why it’s dishonest.",
+        "Do it just this once.",
+        "Avoid answering and ignore the request."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 79,
+      "category": "Focus",
+      "question": "You’re working but keep getting distracted by notifications. What’s the most focused behavior?",
+      "options": [
+        "Put your phone on silent and schedule breaks.",
+        "Reply quickly so you're not thinking about it.",
+        "Keep it nearby but check only if it vibrates.",
+        "Ignore the task until you're fully in the mood."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 80,
+      "category": "Gratitude & Positivity",
+      "question": "Your hard work is finally noticed. What’s a growth-positive response?",
+      "options": [
+        "Act like you expected it — it’s overdue.",
+        "Acknowledge it, thank those who supported you, and stay humble.",
+        "Downplay it to avoid attention.",
+        "Use it to prove others were wrong."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 81,
+      "category": "Decision-Making",
+      "question": "You're offered two roles—one is safe and familiar, the other is new and challenging. What’s the most growth-oriented choice?",
+      "options": [
+        "Take the safe one — you’ll succeed easily.",
+        "Choose the challenging one if you're excited to grow.",
+        "Let someone else decide for you.",
+        "Reject both until something ideal comes."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 82,
+      "category": "Empathy",
+      "question": "Your classmate is constantly late because of personal issues. What shows both empathy and boundaries?",
+      "options": [
+        "Cover for them every time to help them out.",
+        "Ignore it — not your concern.",
+        "Understand their situation but suggest they speak with a mentor.",
+        "Complain about them to the teacher."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 83,
+      "category": "Resilience",
+      "question": "Your startup idea fails after a year. What mindset shows true resilience?",
+      "options": [
+        "Never try again — failure hurts too much.",
+        "Learn from the experience and apply the lessons next time.",
+        "Blame others for not supporting you enough.",
+        "Completely change fields to avoid embarrassment."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 84,
+      "category": "Listening",
+      "question": "In a heated debate, the other person is clearly wrong. What’s the most emotionally intelligent response?",
+      "options": [
+        "Interrupt and correct them immediately.",
+        "Let them finish, then respond calmly with facts.",
+        "Mock their logic to make a point.",
+        "Walk away without responding."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 85,
+      "category": "Confidence",
+      "question": "Someone criticizes your presentation style in front of others. What shows confident self-awareness?",
+      "options": [
+        "Defend yourself immediately and aggressively.",
+        "Thank them for the feedback and ask for suggestions.",
+        "Ignore the comment and act unaffected.",
+        "Avoid presenting again to prevent future embarrassment."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 86,
+      "category": "Accountability",
+      "question": "A project goes off-track due to a shared error. What’s the most accountable reaction?",
+      "options": [
+        "Accept your part, discuss solutions with the team.",
+        "Let the team lead take responsibility.",
+        "Stay silent and hope it gets fixed.",
+        "Shift focus to others’ mistakes instead."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 87,
+      "category": "Adaptability",
+      "question": "Your mentor suddenly changes the direction of your project. What’s the most adaptive response?",
+      "options": [
+        "Push back because your original plan was better.",
+        "Ask questions, understand the reason, and adjust accordingly.",
+        "Follow blindly without understanding.",
+        "Ignore the change until told again."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 88,
+      "category": "Teamwork",
+      "question": "You and your teammate disagree on execution style. What reflects strong teamwork?",
+      "options": [
+        "Stick to your plan no matter what.",
+        "Suggest testing both ideas or finding a compromise.",
+        "Convince others to support your version.",
+        "Avoid the topic and let tension build."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 89,
+      "category": "Work Ethic",
+      "question": "You’re asked to stay late at work one evening for a team goal. You’re tired. What’s a balanced response?",
+      "options": [
+        "Refuse — your personal time matters more.",
+        "Agree this time, but set boundaries if it repeats.",
+        "Stay silent and do it resentfully.",
+        "Always stay back, no matter how often."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 90,
+      "category": "Judgment",
+      "question": "You hear a rumor about a colleague. What reflects mature judgment?",
+      "options": [
+        "Believe it — there’s usually some truth.",
+        "Avoid working with them just in case.",
+        "Verify the facts before forming any opinion.",
+        "Confront them directly about it."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 91,
+      "category": "Respect",
+      "question": "A junior team member shares an idea that you know won’t work. What shows respectful professionalism?",
+      "options": [
+        "Laugh and move on quickly.",
+        "Explain kindly why it might not work and invite other ideas.",
+        "Ignore the comment and continue with your plan.",
+        "Immediately replace their idea with yours."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 92,
+      "category": "Critical Thinking",
+      "question": "You're asked to promote a product you’re unsure about. What’s the most critical-thinking response?",
+      "options": [
+        "Promote it anyway — it's your job.",
+        "Ask for data and test it yourself before recommending.",
+        "Rely on past experiences with similar products.",
+        "Avoid asking questions to not cause trouble."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 93,
+      "category": "Open Feedback",
+      "question": "You’re leading a team and a member gives you honest but negative feedback. What do you do?",
+      "options": [
+        "Thank them and ask how you can improve.",
+        "Defend your actions and explain your side.",
+        "Disregard the feedback — it’s just one opinion.",
+        "Change the topic to avoid awkwardness."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 94,
+      "category": "Collaboration",
+      "question": "In a group assignment, one member is underperforming. What’s the collaborative approach?",
+      "options": [
+        "Take over their work quietly.",
+        "Discuss roles clearly and help them improve.",
+        "Complain about them to the teacher or leader.",
+        "Do only your part and ignore the group dynamic."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 95,
+      "category": "Humility",
+      "question": "You win an award, but someone else also worked hard. What shows real humility?",
+      "options": [
+        "Say you deserved it more.",
+        "Acknowledge others' efforts and share the spotlight.",
+        "Avoid talking about the award.",
+        "Tell others you were surprised to win."
+      ],
+      "ideal_answer": "B"
+    },
+    {
+      "id": 96,
+      "category": "Conflict Handling",
+      "question": "You’re upset with a coworker. What’s the most constructive way to handle it?",
+      "options": [
+        "Talk behind their back to get others on your side.",
+        "Send them a passive-aggressive message.",
+        "Schedule a calm, private conversation.",
+        "Ignore them for a few days to teach them a lesson."
+      ],
+      "ideal_answer": "C"
+    },
+    {
+      "id": 97,
+      "category": "Accountability",
+      "question": "Your team’s project failed because you didn’t meet one part. What’s the most accountable response?",
+      "options": [
+        "Apologize, take ownership, and ask how to improve.",
+        "Blame unclear instructions from the start.",
+        "Avoid responsibility since the team also missed deadlines.",
+        "Say nothing — the damage is already done."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 98,
+      "category": "Emotional Stability",
+      "question": "You receive harsh criticism from someone in public. What reflects emotional control?",
+      "options": [
+        "Respond calmly and ask for clarity later.",
+        "Argue back and defend your actions immediately.",
+        "Walk out of the situation in frustration.",
+        "Criticize them in return to maintain respect."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 99,
+      "category": "Optimism",
+      "question": "A plan you worked hard on gets rejected. What’s a healthy optimistic attitude?",
+      "options": [
+        "See it as a learning opportunity and try again.",
+        "Get discouraged and stop proposing ideas.",
+        "Blame others for not seeing the value.",
+        "Assume your ideas aren’t worth sharing anymore."
+      ],
+      "ideal_answer": "A"
+    },
+    {
+      "id": 100,
+      "category": "Self-Awareness",
+      "question": "You consistently get feedback about interrupting others. What’s a self-aware step to improve?",
+      "options": [
+        "Ignore it — everyone does it sometimes.",
+        "Become more mindful and wait for others to finish speaking.",
+        "Tell people you’re just enthusiastic, not rude.",
+        "Avoid conversations to reduce mistakes."
+      ],
+      "ideal_answer": "B"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+

@@ -180,7 +180,7 @@ export const Report = ({ data, timeSpent }) => {
     return (
         <>
             {showModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  z-50">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center  justify-center  z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
                         <h2 className="text-xl font-bold mb-4">Enter Your Name</h2>
                         <input
@@ -201,7 +201,7 @@ export const Report = ({ data, timeSpent }) => {
             )}
             <div className={`min-h-screen bg-gradient-to-b from-[#f9fafb] to-[#eef2ff] p-4 md:p-8 transition ${showModal ? "blur-md" : ""
                 }`}>
-                <div className="mx-auto max-w-10xl">
+                <div className="mx-auto max-w-12xl">
                     {/* Header Section */}
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
