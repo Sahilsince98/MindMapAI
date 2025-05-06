@@ -3,11 +3,17 @@ import NavbarLandingPage from '../components/NavbarLandingPage'
 import { Brain, Lightbulb, Target, Compass, Star, ArrowRight, CheckCircle, Users, TrendingUp, Play, Zap, Users2, Eye, Award, Building2, BadgeCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 const SoftSkillsTest = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
    const navigate=useNavigate()
+   const query = useQuery();
+   const formPath = query.get("formPath");
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -22,7 +28,7 @@ const SoftSkillsTest = () => {
     setTimeout(() => setIsAnimating(false), 500);
   };
 const handleNavigate=()=>{
-    navigate("/questions")
+    navigate(`/questions?formPath=${formPath}`)
 }
   useEffect(() => {
     let intervalId;
@@ -248,34 +254,6 @@ const handleNavigate=()=>{
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
-          What Others Are Saying 
-          <span className="gradient-text">(Real Success Stories)</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl card-shadow hover-scale">
-                <div className="flex items-center mb-6">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover ring-4 ring-indigo-50"
-                  />
-                  <div className="ml-4">
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
     <div 
       className="carousel"
       onMouseEnter={() => setIsPaused(true)}

@@ -1,0 +1,608 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "A project you're leading is falling behind schedule due to some unexpected issues. How do you manage the team?",
+        "options": [
+          "Panic and take immediate control of every task to get things back on track.",
+          "Keep the team motivated, acknowledge the issue, and delegate tasks to meet the new deadline.",
+          "Blame the team for their inefficiency and ask them to work harder.",
+          "Ignore the issue and hope things get back on track on their own."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 2,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "What is the missing number in the series: 3, 9, 27, ____?",
+        "options": [
+          "81",
+          "72",
+          "54",
+          "36"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 3,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You notice that a friend is upset but isn’t talking about it. What do you do?",
+        "options": [
+          "Ignore them and continue with your day.",
+          "Ask if they’re okay and offer support, letting them open up when they’re ready.",
+          "Tell them to stop being emotional and focus on work.",
+          "Keep offering advice, even if they’re not asking for it."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 4,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "What is the value of x in the equation: 5x + 10 = 30?",
+        "options": [
+          "5",
+          "4",
+          "3",
+          "2"
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 5,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "How do you handle receiving negative feedback from your supervisor?",
+        "options": [
+          "Take it personally and feel offended.",
+          "Listen carefully, accept the feedback, and look for areas to improve.",
+          "Ignore the feedback and continue with the same approach.",
+          "Feel defeated and lose motivation to improve."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 6,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the correct result of: (7 + 5) × 2?",
+        "options": [
+          "24",
+          "22",
+          "18",
+          "16"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 7,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "If a team member is having trouble with a task, how do you approach them?",
+        "options": [
+          "Ignore them and move forward with your own tasks.",
+          "Offer help by suggesting solutions or collaborating on the task together.",
+          "Tell them to figure it out themselves as it's part of their job.",
+          "Criticize them for not understanding their responsibilities."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 8,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If a square has sides of length 6 cm, what is its area?",
+        "options": [
+          "36 cm²",
+          "24 cm²",
+          "12 cm²",
+          "18 cm²"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 9,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You are juggling multiple tasks at work. How do you manage stress and stay productive?",
+        "options": [
+          "Push through, working as fast as possible to finish everything.",
+          "Take short breaks to refresh your mind and prioritize tasks to avoid overwhelming yourself.",
+          "Ignore the stress and work as usual.",
+          "Seek help from others without trying to manage your own workload."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 10,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of these words is most similar to 'endure'?",
+        "options": [
+          "Quit",
+          "Persevere",
+          "Forget",
+          "Abandon"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 11,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You are working on a team project. One of your team members keeps missing deadlines. What do you do?",
+        "options": [
+          "Handle the tasks yourself to avoid delays.",
+          "Communicate with them privately, understand the issues, and offer support to help them improve.",
+          "Report them to the manager for their lack of responsibility.",
+          "Ignore the issue and let it affect the project deadline."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 12,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which number comes next in this sequence? 2, 5, 10, 17, ____?",
+        "options": [
+          "24",
+          "26",
+          "30",
+          "32"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 13,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You are upset about a recent event. What is your approach to dealing with your emotions?",
+        "options": [
+          "Let the anger or frustration affect my work and mood.",
+          "Acknowledge my emotions, find a healthy outlet, and refocus on tasks.",
+          "Ignore my feelings and carry on without addressing them.",
+          "Take my frustration out on others around me."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 14,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the largest prime number?",
+        "options": [
+          "13",
+          "17",
+          "19",
+          "23"
+        ],
+        "ideal_answer": "D"
+      },
+      {
+        "id": 15,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "A colleague asks for feedback on their presentation. How do you respond?",
+        "options": [
+          "Tell them it was perfect without offering any suggestions for improvement.",
+          "Offer constructive feedback, focusing on both strengths and areas to improve.",
+          "Ignore their request and avoid offering feedback.",
+          "Criticize them harshly for minor mistakes."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 16,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the correct solution to: (12 + 4) ÷ 4?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 17,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "How do you typically handle conflicts with a colleague at work?",
+        "options": [
+          "Avoid the issue and let it resolve on its own.",
+          "Listen to their perspective, share your own, and find a compromise.",
+          "Get angry and raise your voice to prove your point.",
+          "Ignore the conflict and pretend it doesn't exist."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 18,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of these is the correct analogy? Tree is to Forest as Book is to ____?",
+        "options": [
+          "Author",
+          "Shelf",
+          "Library",
+          "Page"
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 19,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "Your team is facing a major setback in a project. How do you keep the morale high?",
+        "options": [
+          "Ignore the setback and focus only on the next steps.",
+          "Acknowledge the setback, reassure the team, and help everyone focus on the solution.",
+          "Blame others for the setback and criticize the team for mistakes.",
+          "Give up on the project as the setback is too big to overcome."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 20,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the opposite of 'conserve'?",
+        "options": [
+          "Preserve",
+          "Waste",
+          "Save",
+          "Protect"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 21,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "Your friend is feeling down due to a personal problem, but they don't want to talk about it. How do you respond?",
+        "options": [
+          "Leave them alone and give them space to figure it out.",
+          "Tell them that they should talk about it and force them to open up.",
+          "Express understanding and offer support, letting them know you're there for them whenever they're ready.",
+          "Ignore their feelings and act as if everything is normal."
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 22,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "What is the next number in the sequence: 1, 1, 2, 3, 5, 8, ____?",
+        "options": [
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 23,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You have a disagreement with a colleague, but both of you need to continue working together on a project. How do you proceed?",
+        "options": [
+          "Ignore the disagreement and continue working without addressing it.",
+          "Make sure you win the argument so your perspective is heard.",
+          "Seek to understand the colleague's point of view, agree on a compromise, and move forward collaboratively.",
+          "Stop communicating with the colleague until they acknowledge they were wrong."
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 24,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If a triangle has angles of 45° and 45°, what is the value of the third angle?",
+        "options": [
+          "90°",
+          "45°",
+          "60°",
+          "180°"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 25,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "A colleague constantly interrupts you during meetings, making you feel unheard. How do you handle the situation?",
+        "options": [
+          "Ignore it and hope they stop interrupting.",
+          "Politely ask them to allow you to finish speaking before responding.",
+          "Shout at them in frustration to make your point.",
+          "End the conversation abruptly without addressing the issue."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 26,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "What is the area of a circle with a radius of 7 cm? (Use π = 3.14)",
+        "options": [
+          "153.86 cm²",
+          "154 cm²",
+          "149 cm²",
+          "156 cm²"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 27,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "Your team is facing a stressful deadline, and the mood is low. How do you contribute to keeping everyone motivated?",
+        "options": [
+          "Ignore the situation and continue working at your own pace.",
+          "Acknowledge the pressure, encourage your team, and help with tasks wherever possible.",
+          "Tell the team that the deadline is unimportant and we should work at our own pace.",
+          "Avoid helping the team and focus only on your own work."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 28,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of these is the correct simplification of: (3x + 5) – (2x – 3)?",
+        "options": [
+          "5x + 8",
+          "x + 2",
+          "x – 8",
+          "5x – 2"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 29,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You feel overwhelmed by the amount of work you have. How do you deal with the situation?",
+        "options": [
+          "Procrastinate and avoid the work until it becomes even more stressful.",
+          "Prioritize tasks, break them into smaller steps, and ask for help if needed.",
+          "Give up on all tasks and decide you can't handle it.",
+          "Blame others for the workload and demand they take some responsibility."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 30,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If you buy 3 books priced at ₹100 each and 2 books priced at ₹150 each, what is the total cost?",
+        "options": [
+          "₹450",
+          "₹500",
+          "₹550",
+          "₹600"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 31,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "A friend of yours is going through a breakup. They are constantly talking about it. What do you do?",
+        "options": [
+          "Tell them to get over it and stop complaining.",
+          "Give them your full attention, listen actively, and empathize with their feelings.",
+          "Avoid talking to them until they stop talking about it.",
+          "Change the subject and ignore their feelings."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 32,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If a car travels 180 kilometers in 3 hours, what is its average speed?",
+        "options": [
+          "45 km/h",
+          "50 km/h",
+          "60 km/h",
+          "65 km/h"
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 33,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "During a heated discussion at work, you notice your colleague becoming visibly upset. What do you do?",
+        "options": [
+          "Continue arguing and ignore their emotions.",
+          "Pause the discussion, acknowledge their feelings, and suggest a calm, constructive conversation later.",
+          "Shut down the conversation and tell them to calm down.",
+          "Laugh at their frustration to lighten the mood."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 34,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the next number in the series: 4, 9, 16, 25, ____?",
+        "options": [
+          "30",
+          "35",
+          "36",
+          "40"
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 35,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "When receiving feedback at work, you feel it's unfair. How do you respond?",
+        "options": [
+          "Dismiss the feedback immediately and argue with your manager.",
+          "Listen carefully to the feedback, reflect on it, and ask for specific examples to improve.",
+          "Get upset and avoid talking to anyone for the rest of the day.",
+          "Agree with everything to avoid conflict, even if it’s unfair."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 36,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If the sum of two numbers is 50 and their difference is 10, what are the numbers?",
+        "options": [
+          "20 and 30",
+          "25 and 35",
+          "15 and 35",
+          "30 and 40"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 37,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "A team member is struggling to complete their task on time. You’re under pressure as well. What do you do?",
+        "options": [
+          "Ignore them and focus only on your own task.",
+          "Offer to help them finish the task, even if it means staying late.",
+          "Criticize them for not being able to complete the task on time.",
+          "Ask them to figure it out on their own and move on with your work."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 38,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "What is the value of x in the equation 2x + 6 = 18?",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 39,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You’re faced with a situation where someone criticizes your ideas publicly. What’s your reaction?",
+        "options": [
+          "Defend your ideas aggressively.",
+          "Listen to the criticism calmly, assess its validity, and thank them for the feedback.",
+          "Ignore the criticism and leave the conversation immediately.",
+          "Argue and make the other person feel embarrassed."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 40,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the median of the set of numbers: 7, 9, 13, 14, 15?",
+        "options": [
+          "9",
+          "13",
+          "14",
+          "7"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 41,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "When you feel anxious before a big presentation, how do you handle the situation?",
+        "options": [
+          "Ignore the anxiety and hope it goes away.",
+          "Acknowledge the anxiety, take deep breaths, and focus on the task at hand.",
+          "Cancel the presentation to avoid facing the anxiety.",
+          "Let the anxiety control you and avoid the presentation altogether."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 42,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the area of a triangle with a base of 6 cm and height of 8 cm?",
+        "options": [
+          "24 cm²",
+          "30 cm²",
+          "48 cm²",
+          "50 cm²"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 43,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You and a colleague are assigned to work together, but you notice you both have conflicting ideas. How do you proceed?",
+        "options": [
+          "Let the conflict escalate and hope it resolves on its own.",
+          "Dismiss your colleague's ideas without explanation.",
+          "Seek common ground by discussing both perspectives and finding a compromise.",
+          "Avoid talking to your colleague and work independently."
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 44,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If you have a cube with an edge length of 4 cm, what is the volume of the cube?",
+        "options": [
+          "64 cm³",
+          "16 cm³",
+          "8 cm³",
+          "32 cm³"
+        ],
+        "ideal_answer": "A"
+      },
+      {
+        "id": 45,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You’ve just received negative feedback on a project you worked hard on. What’s your first reaction?",
+        "options": [
+          "Get defensive and argue that the feedback is unfair.",
+          "Feel disappointed but take the feedback constructively to improve.",
+          "Ignore the feedback and continue working as usual.",
+          "Avoid talking to anyone about the project to avoid more criticism."
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 46,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the result of 12 × (5 + 3)?",
+        "options": [
+          "60",
+          "96",
+          "72",
+          "108"
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 47,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "When a team member makes a mistake, how do you respond?",
+        "options": [
+          "Ignore the mistake and hope they figure it out themselves.",
+          "Publicly point out their mistake and make them feel bad.",
+          "Offer support, provide constructive feedback, and help them improve.",
+          "Avoid working with them again."
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 48,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "Which of the following is the next number in the series: 2, 4, 8, 16, ____?",
+        "options": [
+          "18",
+          "32",
+          "64",
+          "128"
+        ],
+        "ideal_answer": "B"
+      },
+      {
+        "id": 49,
+        "category": "Emotional Intelligence (EQ)",
+        "question": "You are in a situation where your friend is being unfairly criticized by others. How do you act?",
+        "options": [
+          "Stay quiet and avoid getting involved.",
+          "Join in with the criticism to avoid being targeted yourself.",
+          "Stand up for your friend and offer them support, calmly defending them.",
+          "Ignore your friend and leave the situation."
+        ],
+        "ideal_answer": "C"
+      },
+      {
+        "id": 50,
+        "category": "Intelligence Quotient (IQ)",
+        "question": "If a rectangle has a length of 5 cm and a width of 3 cm, what is its perimeter?",
+        "options": [
+          "16 cm",
+          "15 cm",
+          "18 cm",
+          "20 cm"
+        ],
+        "ideal_answer": "A"
+      }
+    ]
+  }
+  
+  
+  
+ 
